@@ -1,7 +1,11 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<h1>Calendar system</h1>
+<AuthorizeView>
+    <NotAuthorized>
+        <p>Please login to gain access to the calendar</p>
+    </NotAuthorized>
+    <Authorized>
+        <!--Here goes the calendar grid code-->
+    </Authorized>
+</AuthorizeView>
