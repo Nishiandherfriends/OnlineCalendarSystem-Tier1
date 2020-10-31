@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineCalendarSystem_Tier1.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace OnlineCalendarSystem_Tier1.Models
         public User(int id, string username, int securityLevel)
         {
             this.id = id;
-            this.username = username;
+            this.username = DatabaseCompatibilityService.createVarchar(15, username);
             this.securityLevel = securityLevel;
         }
 
