@@ -5,4 +5,8 @@
     <RootNamespace>OnlineCalendarSystem_Tier1</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+  </ItemGroup>
+
 </Project>
