@@ -1,5 +1,6 @@
 ﻿@page "/"
-
+@using OnlineCalendarSystem_Tier1.Data
+@using OnlineCalendarSystem_Tier1.Models 
 <h1>Calendar system</h1>
 <AuthorizeView>
     <NotAuthorized>
@@ -7,5 +8,27 @@
     </NotAuthorized>
     <Authorized>
         <!--Here goes the calendar grid code-->
+        <select @onChange="LocalCalendar">
+            @foreach (string monthName in monthNames)
+            {
+                <option>
+                    @monthName
+                </option>
+            }
+        </select>
     </Authorized>
 </AuthorizeView>
+@code{
+    List<string> monthNames = new List<string>();
+    List<int> days = new List<int>();
+    List<Date> weeks = new List<Date> ();
+    DateTime startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+    DateTime endDate = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)).AddMonths(1).AddYears(-1);
+
+    protected override void OnInitialized(){
+        monthNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthGenitiveNames.ToList();
+    }
+    private void LocalCalendar(ChangeEventArgs e){
+        var month = e.Value.ToString();
+    }
+}

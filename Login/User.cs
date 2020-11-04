@@ -6,7 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlineCalendarSystem_Tier1.Models
+namespace OnlineCalendarSystem_Tier1.Login
 {
     public class User
     {
