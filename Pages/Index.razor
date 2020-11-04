@@ -5,10 +5,7 @@
 <AuthorizeView>
     <NotAuthorized>
         <p>Please login to gain access to the calendar</p>
-    </NotAuthorized>
-    <Authorized>
-        <!--Here goes the calendar grid code-->
-        <select @onChange="LocalCalendar">
+        <select @onchange="LocalCalendar">
             @foreach (string monthName in monthNames)
             {
                 <option>
@@ -16,6 +13,10 @@
                 </option>
             }
         </select>
+    </NotAuthorized>
+    <Authorized>
+        <!--Here goes the calendar grid code-->
+        
     </Authorized>
 </AuthorizeView>
 @code{
