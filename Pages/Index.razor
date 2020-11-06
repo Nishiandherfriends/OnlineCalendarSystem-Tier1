@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using OnlineCalendarSystem_Tier1.Models
+
 <style type="text/css">
     #tblParent tbody tr td {
         width: 200px;
@@ -28,15 +29,16 @@
         text-decoration: underline;
         margin-bottom: 36px;
     }
-</style> 
-<h1>Calendar system</h1>
+</style>
+
+<h1>Blazor Calender Example</h1>
 
 @if (displayModal)
 {
     <div id="divModal">
         <div class="container">
             <div class="panel panel-default">
-                <div class="panel-heading modalHeading">Set Note</div>
+                <div class="panel-heading modalHeading">Set Description</div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-4">
@@ -57,7 +59,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <label>Note : </label>
+                        <label>Description : </label>
                     </div>
                     <div class="col-md-8">
                         <input type="text" placeholder="Type here..." />
@@ -75,21 +77,21 @@
         </div>
     </div>
 }
-        <select @onchange="LocalCalendar">
-            @foreach (string monthName in monthNames)
-            {
-                <option>
-                    @monthName
-                </option>
-            }
-        </select>
+
+<select @onchange="LocalCalender">
+    @foreach (string monthName in monthNames)
+    {
+        <option>@monthName</option>
+    }
+</select>
+
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
-            @for (var dayIndex = 0; dayIndex <days.Count();dayIndex++)
+            @for (var dayIndex = 0; dayIndex < days.Count(); dayIndex++)
             {
                 <th>
-                @days[dayIndex]
+                    @days[dayIndex]
                 </th>
             }
         </tr>
@@ -102,6 +104,7 @@
                 {
                     var wIndex = weekIndex;
                     var dIndex = dayIndex;
+
                     <td @ondblclick="@(() => OpenModal(wIndex, dIndex))">
                         @weeks[weekIndex].Dates[dayIndex].value
                         <br /><br />
@@ -115,66 +118,79 @@
             </tr>
         }
     </tbody>
+</table>
 
-</table>        
 @code{
+    
     List<string> monthNames = new List<string>();
     List<string> days = new List<string>();
-    List<WeekClass> weeks = new List<WeekClass> ();
+    List<WeekClass> weeks = new List<WeekClass>();
     DateTime startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-    DateTime endDate = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)).AddMonths(1).AddYears(-1);
+    DateTime endDate = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)).AddMonths(1).AddDays(-1);
     bool displayModal = false;
 
-    protected override void OnInitialized(){
+    protected override void OnInitialized()
+    {
         monthNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthGenitiveNames.ToList();
-        GenerateCalendarHeader();
-        GenerateCalendarBody();
+        GenerateCalenderHeader();
+        GenerateCalenderBody();
     }
-    private void LocalCalendar(ChangeEventArgs e){
+    private void LocalCalender(ChangeEventArgs e)
+    {
         var month = e.Value.ToString();
-        int monthIndex = DateTime.ParseExact(month, "MMMM", System.Globalization.CultureInfo.CreateSpecificCulture("en-GB")).Month; 
-        startDate =  new DateTime(DateTime.Now.Year, monthIndex, 1);
-        endDate = (new DateTime(DateTime.Now.Year, monthIndex, 1)).AddMonths(1).AddYears(-1);
-    }
+        int monthIndex = DateTime.ParseExact(month, "MMMM", System.Globalization.CultureInfo.CreateSpecificCulture("en-GB")).Month;
+        startDate = new DateTime(DateTime.Now.Year, monthIndex, 1);
+        endDate = (new DateTime(DateTime.Now.Year, monthIndex, 1)).AddMonths(1).AddDays(-1);
 
-    private void GenerateCalendarHeader(){
-        var day1= new List<string>();
-        for(var dt = startDate; dt <= endDate; dt = dt.AddDays(1)){
+        GenerateCalenderHeader();
+        GenerateCalenderBody();
+    }
+    private void GenerateCalenderHeader()
+    {
+        var day1 = new List<string>();
+        for (var dt = startDate; dt <= endDate; dt = dt.AddDays(1))
+        {
             day1.Add(dt.ToString("dddd"));
         }
         days = day1.Distinct().ToList();
     }
-    private void GenerateCalendarBody(){
+    private void GenerateCalenderBody()
+    {
         weeks = new List<WeekClass>();
 
         int flag = 0;
         WeekClass week = new WeekClass();
         List<Event> dates = new List<Event>();
         var totalDays = (int)(endDate - startDate).TotalDays;
-        int countDays= 0;
+        int countdays = 0;
 
-        for(var dt = startDate; dt <= endDate; dt = dt.AddDays(1)){
+        for (var dt = startDate; dt <= endDate; dt = dt.AddDays(1))
+        {
             flag++;
 
-            dates.Add(new Event(){
-                value = dt.ToString("dd-MMMM-yyyy"),
+            dates.Add(new Event()
+            {
+                value = dt.ToString("dd-MMM-yyyy"),
                 dayName = dt.ToString("dddd")
             });
-            if(flag == 7){
+
+            if (flag == 7)
+            {
                 week = new WeekClass();
                 week.Dates = dates;
                 weeks.Add(week);
 
                 dates = new List<Event>();
-                    flag = 0;
+                flag = 0;
             }
-            if(countDays == totalDays){
+            if (countdays == totalDays)
+            {
                 week = new WeekClass();
                 week.Dates = dates;
                 weeks.Add(week);
                 break;
             }
-            countDays++;
+            countdays++;
         }
     }
     private void CloseModal()
@@ -184,5 +200,5 @@
     private void OpenModal(int wIndex, int dIndex)
     {
         displayModal = true;
-    }   
+    }
 }
