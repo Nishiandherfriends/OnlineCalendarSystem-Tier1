@@ -11,13 +11,18 @@ namespace OnlineCalendarSystem_Tier1.Models
         [NotNull]
         public string title { get; set; }
         public string description { get; set; }
+        public string value { get; set; }
         public string location { get; set; }
+        public string dayName{get;set;}
         [NotNull]
-        public Date startDate { get; set; }
+        public DateTime startDate { get; set; } = new DateTime(2020,1,1);
         [NotNull]
-        public Date endDate { get; set; }
+        public DateTime endDate { get; set; }= new DateTime(2020,1,1);
+        public Event(){
 
-        public Event(int id, string title, string description, string location, Date startDate, Date endDate)
+        }
+
+        public Event(int id, string title, string description, string location, DateTime startDate, DateTime endDate)
         {
             this.id = id;
             this.title = title;
