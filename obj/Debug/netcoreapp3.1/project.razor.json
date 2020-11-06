@@ -12,6 +12,39 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
+        "HashCode": -1439118723,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.Index",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Index"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Index"
+        }
+      },
+      {
+        "HashCode": -2027966658,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.Index",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "OnlineCalendarSystem_Tier1.Pages.Index"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Index",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 420846051,
         "Kind": "Components.Component",
         "Name": "OnlineCalendarSystem_Tier1.Pages.Counter",
@@ -45,35 +78,35 @@
         }
       },
       {
-        "HashCode": -1439118723,
+        "HashCode": -103194894,
         "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.Pages.Index",
+        "Name": "OnlineCalendarSystem_Tier1.App",
         "AssemblyName": "OnlineCalendarSystem Tier1",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Index"
+            "TagName": "App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Index"
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.App"
         }
       },
       {
-        "HashCode": -2027966658,
+        "HashCode": -2087330503,
         "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.Pages.Index",
+        "Name": "OnlineCalendarSystem_Tier1.App",
         "AssemblyName": "OnlineCalendarSystem Tier1",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "OnlineCalendarSystem_Tier1.Pages.Index"
+            "TagName": "OnlineCalendarSystem_Tier1.App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Index",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -256,39 +289,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -103194894,
-        "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.App",
-        "AssemblyName": "OnlineCalendarSystem Tier1",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.App"
-        }
-      },
-      {
-        "HashCode": -2087330503,
-        "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.App",
-        "AssemblyName": "OnlineCalendarSystem Tier1",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "OnlineCalendarSystem_Tier1.App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
