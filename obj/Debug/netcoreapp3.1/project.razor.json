@@ -12,6 +12,39 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
+        "HashCode": -103194894,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.App",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.App"
+        }
+      },
+      {
+        "HashCode": -2087330503,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.App",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "OnlineCalendarSystem_Tier1.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.App",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 420846051,
         "Kind": "Components.Component",
         "Name": "OnlineCalendarSystem_Tier1.Pages.Counter",
@@ -74,6 +107,188 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Index",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -582594590,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.Login",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Login"
+        }
+      },
+      {
+        "HashCode": 648642420,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.Login",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "OnlineCalendarSystem_Tier1.Pages.Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Login",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1302781531,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Shared.LoginLayout",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "LoginLayout"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Body",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Body",
+              "Components.ChildContent": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.LoginLayout"
+        }
+      },
+      {
+        "HashCode": 1579809536,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Shared.LoginLayout",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "OnlineCalendarSystem_Tier1.Shared.LoginLayout"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Body",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment",
+            "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+            "Metadata": {
+              "Common.PropertyName": "Body",
+              "Components.ChildContent": "True"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.LoginLayout",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1522064852,
+        "Kind": "Components.ChildContent",
+        "Name": "OnlineCalendarSystem_Tier1.Shared.LoginLayout.Body",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Body",
+            "ParentTag": "LoginLayout"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.LoginLayout.Body",
+          "Components.IsSpecialKind": "Components.ChildContent"
+        }
+      },
+      {
+        "HashCode": 516513229,
+        "Kind": "Components.ChildContent",
+        "Name": "OnlineCalendarSystem_Tier1.Shared.LoginLayout.Body",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "Documentation": "\n            <summary>\n            Gets the content to be rendered inside the layout.\n            </summary>\n        ",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Body",
+            "ParentTag": "OnlineCalendarSystem_Tier1.Shared.LoginLayout"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.LoginLayout.Body",
+          "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -171417615,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt"
+        }
+      },
+      {
+        "HashCode": -301741061,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -203,92 +418,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.NavMenu",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -171417615,
-        "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
-        "AssemblyName": "OnlineCalendarSystem Tier1",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt"
-        }
-      },
-      {
-        "HashCode": -301741061,
-        "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
-        "AssemblyName": "OnlineCalendarSystem Tier1",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -103194894,
-        "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.App",
-        "AssemblyName": "OnlineCalendarSystem Tier1",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.App"
-        }
-      },
-      {
-        "HashCode": -2087330503,
-        "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.App",
-        "AssemblyName": "OnlineCalendarSystem Tier1",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "OnlineCalendarSystem_Tier1.App"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -14685,6 +14814,16 @@
     {
       "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Pages\\Index.razor",
       "TargetPath": "Pages\\Index.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Pages\\Login.razor",
+      "TargetPath": "Pages\\Login.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Shared\\LoginLayout.razor",
+      "TargetPath": "Shared\\LoginLayout.razor",
       "FileKind": "component"
     },
     {

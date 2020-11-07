@@ -77,3 +77,8 @@ C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3
 C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.dll
 C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.pdb
 C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.genruntimeconfig.cache
+C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Login.razor.g.cs
+C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LoginLayout.razor.g.cs
+C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\Login.razor.g.cs
+C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\Razor\Shared\LoginLayout.razor.g.cs
+C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\bin\Debug\netcoreapp3.1\users.json

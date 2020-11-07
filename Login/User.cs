@@ -16,15 +16,15 @@ namespace OnlineCalendarSystem_Tier1.Login
         [NotNull]
         public string password { get; set; }
         [NotNull, Range(1,3)]
-        public int securityLevel { get; set; }
+        public string securityLevel { get; set; }
 
-        public User(int id, string username, string password, int securityLevel)
+        /*public User(int id, string username, string password, string securityLevel)
         {
             this.id = id;
             this.username = username;
             this.password = password;
             this.securityLevel = securityLevel;
-        }
+        }*/
 
     }
 }

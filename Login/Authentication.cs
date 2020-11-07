@@ -50,10 +50,10 @@ namespace OnlineCalendarSystem_Tier1.login
             ClaimsIdentity identity = new ClaimsIdentity();
             try
             {
-                User user = userService.ValidateUser(username, password);
+                User user =  userService.ValidateUser(username, password);
                 identity = SetupClaimsForUser(user);
                 string serializedData = JsonSerializer.Serialize(user);
-                jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serializedData);
+                 jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serializedData);
                 cachedUser = user;
             }
             catch (Exception e)
@@ -76,7 +76,7 @@ namespace OnlineCalendarSystem_Tier1.login
         {
             List<Claim> claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Name, user.username));
-            
+            claims.Add(new Claim("securityLevel", user.securityLevel));
             ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth_type");
            return identity;
         }

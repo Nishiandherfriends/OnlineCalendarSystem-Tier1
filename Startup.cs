@@ -4,12 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlineCalendarSystem_Tier1.Data;
+using OnlineCalendarSystem_Tier1.login;
+using OnlineCalendarSystem_Tier1.Login;
 
 namespace OnlineCalendarSystem_Tier1
 {
@@ -29,6 +32,13 @@ namespace OnlineCalendarSystem_Tier1
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<OnlineCalendarService>();
+            services.AddScoped<AuthenticationStateProvider, Authentication>();
+            services.AddScoped<IUser, UserService>();
+            services.AddAuthorization(options =>
+            {
+               options.AddPolicy("MustBeAdmin", a => a.RequireAuthenticatedUser().RequireClaim("securityLevel", "2"));
+                options.AddPolicy("MustBeUser", a => a.RequireAuthenticatedUser().RequireClaim("securityLevel", "1","2"));
+           });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

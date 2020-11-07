@@ -5,11 +5,23 @@
 </div>
 
 <div class="main">
-    <div class="top-row px-4">
-        <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-    </div>
+    <div class ="top-row px-4">
+    <AuthorizeView>
+        <Authorized>
+            <a href="/" @onclick ="(() => Logout())">Logout</a>
+        </Authorized>
+        <NotAuthorized>
+            <a href="/">Logout</a>
+        </NotAuthorized>
+    </AuthorizeView>
+</div>
 
     <div class="content px-4">
         @Body
     </div>
 </div>
+@code{
+    public void Logout(){
+        
+    }
+}
