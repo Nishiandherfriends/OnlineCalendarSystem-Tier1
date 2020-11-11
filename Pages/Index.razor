@@ -123,7 +123,7 @@
     
     List<string> monthNames = new List<string>();
     List<string> days = new List<string>();
-    List<WeekClass> weeks = new List<WeekClass>();
+    List<Week> weeks = new List<Week>();
     DateTime startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
     DateTime endDate = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)).AddMonths(1).AddDays(-1);
     bool displayModal = false;
@@ -155,10 +155,10 @@
     }
     private void GenerateCalenderBody()
     {
-        weeks = new List<WeekClass>();
+        weeks = new List<Week>();
 
         int flag = 0;
-        WeekClass week = new WeekClass();
+        Week week = new Week();
         List<Event> dates = new List<Event>();
         var totalDays = (int)(endDate - startDate).TotalDays;
         int countdays = 0;
@@ -175,7 +175,7 @@
 
             if (flag == 7)
             {
-                week = new WeekClass();
+                week = new Week();
                 week.Dates = dates;
                 weeks.Add(week);
 
@@ -184,7 +184,7 @@
             }
             if (countdays == totalDays)
             {
-                week = new WeekClass();
+                week = new Week();
                 week.Dates = dates;
                 weeks.Add(week);
                 break;

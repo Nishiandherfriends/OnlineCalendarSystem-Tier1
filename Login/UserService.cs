@@ -6,7 +6,8 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-namespace OnlineCalendarSystem_Tier1.Login{
+namespace OnlineCalendarSystem_Tier1.Login
+{
     public class UserService : IUser
     {
         private List<User> users;

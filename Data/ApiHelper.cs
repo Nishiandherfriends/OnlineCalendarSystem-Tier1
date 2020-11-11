@@ -13,7 +13,7 @@ namespace OnlineCalendarSystem_Tier1.Data
         public static void InitializeClient()
         {
             ApiClient = new HttpClient();
-            ApiClient.BaseAddress = new Uri("http://dnp.metamate.me/"); // Here you can write the base address for simplicity
+            ApiClient.BaseAddress = new Uri("http://localhost:8080/server/Calendar/calendarAPI/"); // Here you can write the base address for simplicity
             ApiClient.DefaultRequestHeaders.Accept.Clear();
             ApiClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("aplication/json"));
         }

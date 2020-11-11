@@ -11,8 +11,7 @@ namespace OnlineCalendarSystem_Tier1.Data
     {
         public async Task<User> login(string username, string password)
         {
-            //Task<User> users;
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync("Adults")) // Alter this when API is working
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync("user")) // Alter this when API is working
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -25,9 +24,20 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        public void createUser(string username, string password)
+        public async void createUser(string username, string password)
         {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/user", "change this"))
+            {
 
+            }
+        }
+
+        public async void updateUser(User user)
+        {
+            /*using (HttpResponseMessage response = await ApiHelper.ApiClient.PatchAsync("/user"))
+            {
+
+            }*/
         }
     }
 }
