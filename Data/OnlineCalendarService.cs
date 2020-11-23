@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using OnlineCalendarSystem_Tier1.Login;
 namespace OnlineCalendarSystem_Tier1.Data
 {
-    // URI - http://localhost:8080/
     public class OnlineCalendarService
     {
         public async Task<User> login(string username, string password)
@@ -25,37 +24,13 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        public async void createUser(string username, string password)
+        public async Task<string> createUser(string username, string password)
         {
             using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/user", ""))
             {
-
-            }
-        }
-
-        //public async void updateUser(User user)
-
-
-        //ArrayList<Event> getEvents(int userID) throws SQLException;
-        //void createEvent(Event event) throws SQLException;
-        //void updateEvent(Event event) throws SQLException;
-
-        //Invite getInvites(int userID) throws SQLException;
-        //void invitePersonToEvent(String username, Event event) throws SQLException;
-        //void addPersonToEvent(int id, Event event) throws SQLException;
-        //void removePersonFromEvent(String username, Event event) throws SQLException;
-
-        /* This is just a model method to know how stuff should be done
-        public async Task loadInfo()
-        {
-            string url = "";
-
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
-            {
                 if (response.IsSuccessStatusCode)
                 {
-                    // Class class = await reponse.Content.ReadAsAsync<Class>();
-                    return null; //return the information
+                    return "Success";
                 }
                 else
                 {
@@ -64,6 +39,15 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        */
+        //public async Task<string> updateUser(User user) {}
+
+        //public async Task<ArrayList<Event>> getEvents(int userID) {}
+        //public async Task<string> createEvent(Event event) {}
+        //public async Task<string> updateEvent(Event event) {}
+
+        //public async Task<Invite> getInvites(int userID) {}
+        //public async Task<string> invitePersonToEvent(String username, Event event) {}
+        //public async Task<string> addPersonToEvent(int id, Event event) {}
+        //public async Task<string> removePersonFromEvent(String username, Event event) {}
     }
 }
