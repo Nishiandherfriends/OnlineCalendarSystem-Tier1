@@ -83,6 +83,7 @@ using OnlineCalendarSystem_Tier1.Login;
 #line hidden
 #nullable disable
 #nullable restore
+<<<<<<< HEAD
 #line 4 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Login.razor"
 using OnlineCalendarSystem_Tier1.Models;
 
@@ -91,6 +92,9 @@ using OnlineCalendarSystem_Tier1.Models;
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Login.razor"
+=======
+#line 4 "C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\Pages\Login.razor"
+>>>>>>> parent of f3af78f... ?
 using login;
 
 #line default
@@ -106,7 +110,11 @@ using login;
         }
         #pragma warning restore 1998
 #nullable restore
+<<<<<<< HEAD
 #line 50 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Login.razor"
+=======
+#line 49 "C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\Pages\Login.razor"
+>>>>>>> parent of f3af78f... ?
       
     private users user;
 
@@ -123,30 +131,26 @@ using login;
         errorMessage = "";
         try
         {
-            ((Authentication)AuthenticationStateProvider).validateLogin(username, password);
+            ((Authentication) AuthenticationStateProvider).validateLogin(username, password);
             username = "";
             password = "";
             NavigationManager.NavigateTo("/calendar");
         }
-        catch (Exception e)
+        catch(Exception e)
         {
             errorMessage = "404 User not found :( ";
-
+             
         }
     }
 
-    public async Task PerformLogOut()
-    {
+    public async Task PerformLogOut(){
         errorMessage = "";
         username = "";
         password = "";
-        try
-        {
+        try{
             ((Authentication)AuthenticationStateProvider).LogOut();
             NavigationManager.NavigateTo("/");
-        }
-        catch (Exception e)
-        {
+        }catch(Exception e){
             errorMessage = "404 not found";
         }
     }

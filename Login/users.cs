@@ -18,7 +18,13 @@ namespace OnlineCalendarSystem_Tier1.Models
         [NotNull, Range(1,3)]
         public string securityLevel { get; set; }
 
+<<<<<<< HEAD:Login/users.cs
         public users(int id, string username, string password, string securityLevel)
+=======
+        public User() {}
+
+        public User(int id, string username, string password, string securityLevel)
+>>>>>>> b1c23c6c798f15d2297a689444bdafca2321ed62:Models/User.cs
         {
             this.id = id;
             this.username = username;
