@@ -114,17 +114,10 @@ using login;
     private string password;
     private string errorMessage;
     protected override Task OnInitializedAsync()
-<<<<<<< HEAD
         {
             user = new users();
             return base.OnInitializedAsync();
         }
-=======
-    {
-        user = new User();
-        return base.OnInitializedAsync();
-    }
->>>>>>> b1c23c6c798f15d2297a689444bdafca2321ed62
     public async Task PerformLogin()
     {
         errorMessage = "";
