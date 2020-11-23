@@ -13,8 +13,8 @@ namespace OnlineCalendarSystem_Tier1.Models
         public int userInvitedID { get; set; }
         public int eventID { get; set; }
         public Event evt { get; set; }
-        public Date startingDate { get; set; }
-        public Date endDate { get; set; }
+        public MyDate startingDate { get; set; }
+        public MyDate endDate { get; set; }
 
         public Invite()
         {
