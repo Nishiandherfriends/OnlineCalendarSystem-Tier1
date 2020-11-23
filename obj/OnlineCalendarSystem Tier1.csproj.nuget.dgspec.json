@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj": {}
+    "C:\\Users\\joaob\\source\\repos\\OnlineCalendarSystem Tier1\\OnlineCalendarSystem Tier1\\OnlineCalendarSystem Tier1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj": {
+    "C:\\Users\\joaob\\source\\repos\\OnlineCalendarSystem Tier1\\OnlineCalendarSystem Tier1\\OnlineCalendarSystem Tier1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj",
+        "projectUniqueName": "C:\\Users\\joaob\\source\\repos\\OnlineCalendarSystem Tier1\\OnlineCalendarSystem Tier1\\OnlineCalendarSystem Tier1.csproj",
         "projectName": "OnlineCalendarSystem Tier1",
-        "projectPath": "C:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj",
-        "packagesPath": "C:\\Users\\javic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\obj\\",
+        "projectPath": "C:\\Users\\joaob\\source\\repos\\OnlineCalendarSystem Tier1\\OnlineCalendarSystem Tier1\\OnlineCalendarSystem Tier1.csproj",
+        "packagesPath": "C:\\Users\\joaob\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joaob\\source\\repos\\OnlineCalendarSystem Tier1\\OnlineCalendarSystem Tier1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\javic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\joaob\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,21 +40,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "EntityFrameWork6.Npgsql": {
-              "target": "Package",
-              "version": "[6.4.1, )"
-            },
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
               "version": "[5.2.7, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
-              "target": "Package",
-              "version": "[5.0.0, )"
             }
           },
           "imports": [

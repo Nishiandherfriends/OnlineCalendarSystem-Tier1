@@ -12,23 +12,21 @@ namespace OnlineCalendarSystem_Tier1.Login
 {
     public class UserService : IUser
     {
-        private List<users> users;
+        private List<User> users;
         private string userFile = "users.json";
-        protected readonly ApplicationDbContext _dbContext;
 
-        public UserService(ApplicationDbContext _db){
+        public UserService(){
             string content = File.ReadAllText(userFile);
-            users = JsonSerializer.Deserialize<List<users>>(content);
-            _dbContext = _db;
+            users = JsonSerializer.Deserialize<List<User>>(content);
         }
-        private void writeUserToFile(List<users> user){
+        private void writeUserToFile(List<User> user){
             string userAsJson = JsonSerializer.Serialize(user);
             File.WriteAllText(userFile, userAsJson);
         }
 
-        public users ValidateUser(string username, string password)
+        public User ValidateUser(string username, string password)
         {
-            users first =  users.FirstOrDefault(user => user.username.Equals(username));
+            User first =  users.FirstOrDefault(user => user.username.Equals(username));
             if (first == null)
             {
                 throw new Exception("user not found");
@@ -42,27 +40,23 @@ namespace OnlineCalendarSystem_Tier1.Login
             return first;
         }
 
-        public async Task<users> AddUser(users user)
+        public async Task<User> AddUser(User user)
         {
             users.Add(user);
             writeUserToFile(users);
             return user;
         }
 
-        public async Task<IList<users>> getUsers()
+        public async Task<IList<User>> getUsers()
         {
             return users;
         }
 
-        public async Task RemoveUser(users toRemove)
+        public async Task RemoveUser(User toRemove)
         {
-            users toBeRemoved = users.First(t => t.username == toRemove.username);
+            User toBeRemoved = users.First(t => t.username == toRemove.username);
             users.Remove(toRemove);
             writeUserToFile(users);
-        }
-        public List<users> displayUsers()
-        {
-            return _dbContext.users.ToList();
         }
     }
 }
