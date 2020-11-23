@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
 using OnlineCalendarSystem_Tier1.Login;
+using OnlineCalendarSystem_Tier1.Models;
 namespace OnlineCalendarSystem_Tier1.login
 {
     public class Authentication : AuthenticationStateProvider
