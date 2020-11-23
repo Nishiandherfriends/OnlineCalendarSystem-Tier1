@@ -84,6 +84,13 @@ using OnlineCalendarSystem_Tier1.Login;
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\Pages\Login.razor"
+using OnlineCalendarSystem_Tier1.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\Pages\Login.razor"
 using login;
 
 #line default
@@ -99,7 +106,7 @@ using login;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 49 "C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\Pages\Login.razor"
+#line 50 "C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\Pages\Login.razor"
       
     private users user;
 
@@ -107,35 +114,46 @@ using login;
     private string password;
     private string errorMessage;
     protected override Task OnInitializedAsync()
+<<<<<<< HEAD
         {
             user = new users();
             return base.OnInitializedAsync();
         }
+=======
+    {
+        user = new User();
+        return base.OnInitializedAsync();
+    }
+>>>>>>> b1c23c6c798f15d2297a689444bdafca2321ed62
     public async Task PerformLogin()
     {
         errorMessage = "";
         try
         {
-            ((Authentication) AuthenticationStateProvider).validateLogin(username, password);
+            ((Authentication)AuthenticationStateProvider).validateLogin(username, password);
             username = "";
             password = "";
             NavigationManager.NavigateTo("/calendar");
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             errorMessage = "404 User not found :( ";
-             
+
         }
     }
 
-    public async Task PerformLogOut(){
+    public async Task PerformLogOut()
+    {
         errorMessage = "";
         username = "";
         password = "";
-        try{
+        try
+        {
             ((Authentication)AuthenticationStateProvider).LogOut();
             NavigationManager.NavigateTo("/");
-        }catch(Exception e){
+        }
+        catch (Exception e)
+        {
             errorMessage = "404 not found";
         }
     }
