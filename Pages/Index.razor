@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@page "/calendar"
 @using OnlineCalendarSystem_Tier1.Models
 
@@ -89,11 +90,26 @@
     <thead>
         <tr>
             @for (var dayIndex = 0; dayIndex < days.Count(); dayIndex++)
+=======
+﻿@page "/"
+@using OnlineCalendarSystem_Tier1.Data
+@using OnlineCalendarSystem_Tier1.Models 
+<h1>Calendar system</h1>
+<AuthorizeView>
+    <NotAuthorized>
+        <p>Please login to gain access to the calendar</p>
+    </NotAuthorized>
+    <Authorized>
+        <!--Here goes the calendar grid code-->
+        <select @onChange="LocalCalendar">
+            @foreach (string monthName in monthNames)
+>>>>>>> parent of 6e47ffc... It works
             {
                 <th>
                     @days[dayIndex]
                 </th>
             }
+<<<<<<< HEAD
         </tr>
     </thead>
     <tbody>
@@ -119,6 +135,11 @@
     </tbody>
 </table>
 
+=======
+        </select>
+    </Authorized>
+</AuthorizeView>
+>>>>>>> parent of 6e47ffc... It works
 @code{
     
     List<string> monthNames = new List<string>();
