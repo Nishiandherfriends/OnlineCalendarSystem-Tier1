@@ -7,9 +7,9 @@ namespace OnlineCalendarSystem_Tier1.Login
 {
     public interface IUser
     {
-        User ValidateUser(string username, string password);
-        Task<User>  AddUser(User user);
-        Task<IList<User>> getUsers();
-        Task RemoveUser(User toRemove);
+        users ValidateUser(string username, string password);
+        Task<users>  AddUser(users user);
+        Task<IList<users>> getUsers();
+        Task RemoveUser(users toRemove);
     }
 }

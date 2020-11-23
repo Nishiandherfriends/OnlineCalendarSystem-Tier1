@@ -13,7 +13,7 @@ namespace OnlineCalendarSystem_Tier1.login
     {
         private readonly IJSRuntime jsRuntime;
         private readonly IUser userService;
-        private User cachedUser;
+        private users cachedUser;
 
         public Authentication(IJSRuntime jsRuntime, IUser userService)
         {
@@ -30,7 +30,7 @@ namespace OnlineCalendarSystem_Tier1.login
                 string userasJson = await jsRuntime.InvokeAsync<string>("sessionStorage.getItem", "currentUser");
                 if (!string.IsNullOrEmpty(userasJson))
                 {
-                    cachedUser = JsonSerializer.Deserialize<User>(userasJson);
+                    cachedUser = JsonSerializer.Deserialize<users>(userasJson);
                     identity = SetupClaimsForUser(cachedUser);
                 }
             }
@@ -51,7 +51,7 @@ namespace OnlineCalendarSystem_Tier1.login
             ClaimsIdentity identity = new ClaimsIdentity();
             try
             {
-                User user =  userService.ValidateUser(username, password);
+                users user =  userService.ValidateUser(username, password);
                 identity = SetupClaimsForUser(user);
                 string serializedData = JsonSerializer.Serialize(user);
                  jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serializedData);
@@ -73,7 +73,7 @@ namespace OnlineCalendarSystem_Tier1.login
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));
         }
 
-        private ClaimsIdentity SetupClaimsForUser(User user)
+        private ClaimsIdentity SetupClaimsForUser(users user)
         {
             List<Claim> claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Name, user.username));
