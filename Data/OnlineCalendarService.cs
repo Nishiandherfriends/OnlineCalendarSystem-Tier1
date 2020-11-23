@@ -9,7 +9,7 @@ namespace OnlineCalendarSystem_Tier1.Data
 {
     public class OnlineCalendarService
     {
-        public async Task<User> login(string username, string password) // Need to find how to send the data
+        public async Task<User> login(string username, string password)
         {
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync("/user"))
             {
