@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>OnlineCalendarSystem_Tier1</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="EntityFrameWork6.Npgsql" Version="6.4.1"/>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0"/>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.0"/>
   </ItemGroup>
-
 </Project>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OnlineCalendarSystem_Tier1.Login
 {
-    public class User
+    public class users
     {
         public int id { get; set; }
         [NotNull]
@@ -18,7 +18,7 @@ namespace OnlineCalendarSystem_Tier1.Login
         [NotNull, Range(1,3)]
         public string securityLevel { get; set; }
 
-        public User(int id, string username, string password, string securityLevel)
+        public users(int id, string username, string password, string securityLevel)
         {
             this.id = id;
             this.username = username;

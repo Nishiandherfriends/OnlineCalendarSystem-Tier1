@@ -10,21 +10,23 @@ namespace OnlineCalendarSystem_Tier1.Login
 {
     public class UserService : IUser
     {
-        private List<User> users;
+        private List<users> users;
         private string userFile = "users.json";
+        protected readonly ApplicationDbContext _dbContext;
 
-        public UserService(){
+        public UserService(ApplicationDbContext _db){
             string content = File.ReadAllText(userFile);
-            users = JsonSerializer.Deserialize<List<User>>(content);
+            users = JsonSerializer.Deserialize<List<users>>(content);
+            _dbContext = _db;
         }
-        private void writeUserToFile(List<User> user){
+        private void writeUserToFile(List<users> user){
             string userAsJson = JsonSerializer.Serialize(user);
             File.WriteAllText(userFile, userAsJson);
         }
 
         public User ValidateUser(string username, string password)
         {
-            User first =  users.FirstOrDefault(user => user.username.Equals(username));
+            users first =  users.FirstOrDefault(user => user.username.Equals(username));
             if (first == null)
             {
                 throw new Exception("user not found");
@@ -38,23 +40,27 @@ namespace OnlineCalendarSystem_Tier1.Login
             return first;
         }
 
-        public async Task<User> AddUser(User user)
+        public async Task<users> AddUser(users user)
         {
             users.Add(user);
             writeUserToFile(users);
             return user;
         }
 
-        public async Task<IList<User>> getUsers()
+        public async Task<IList<users>> getUsers()
         {
             return users;
         }
 
-        public async Task RemoveUser(User toRemove)
+        public async Task RemoveUser(users toRemove)
         {
-            User toBeRemoved = users.First(t => t.username == toRemove.username);
+            users toBeRemoved = users.First(t => t.username == toRemove.username);
             users.Remove(toRemove);
             writeUserToFile(users);
+        }
+        public List<users> displayUsers()
+        {
+            return _dbContext.users.ToList();
         }
     }
 }

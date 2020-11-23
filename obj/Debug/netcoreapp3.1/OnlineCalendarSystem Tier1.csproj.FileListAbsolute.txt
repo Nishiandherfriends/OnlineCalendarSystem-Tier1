@@ -110,3 +110,5 @@ C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.Views.pdb
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.csproj.CopyComplete
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.genruntimeconfig.cache
+C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\UsersDisplay.razor.g.cs
+C:\Users\javic\Documents\GitHub\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.RazorComponent.output.cache
