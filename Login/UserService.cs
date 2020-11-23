@@ -26,7 +26,7 @@ namespace OnlineCalendarSystem_Tier1.Login
             File.WriteAllText(userFile, userAsJson);
         }
 
-        public User ValidateUser(string username, string password)
+        public users ValidateUser(string username, string password)
         {
             users first =  users.FirstOrDefault(user => user.username.Equals(username));
             if (first == null)
