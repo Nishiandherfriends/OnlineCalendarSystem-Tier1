@@ -39,15 +39,15 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        //public async Task<string> updateUser(User user) {}
+        //public async Task<string> updateUser(User user) { return null; }
 
-        //public async Task<ArrayList<Event>> getEvents(int userID) {}
-        //public async Task<string> createEvent(Event event) {}
-        //public async Task<string> updateEvent(Event event) {}
+        //public async Task<ArrayList<Event>> getEvents(int userID) { return null; }
+        //public async Task<string> createEvent(Event event) { return null; }
+        //public async Task<string> updateEvent(Event event) { return null; }
 
-        //public async Task<Invite> getInvites(int userID) {}
-        //public async Task<string> invitePersonToEvent(String username, Event event) {}
-        //public async Task<string> addPersonToEvent(int id, Event event) {}
-        //public async Task<string> removePersonFromEvent(String username, Event event) {}
+        //public async Task<Invite> getInvites(int userID) { return null; }
+        //public async Task<string> invitePersonToEvent(String username, Event event) { return null; }
+        //public async Task<string> addPersonToEvent(int id, Event event) { return null; }
+        //public async Task<string> removePersonFromEvent(String username, Event event) { return null; }
     }
 }
