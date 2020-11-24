@@ -65,8 +65,25 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
+        // This method will return all Events for a given user when it's id is inputed
+        // You just need to copy this " List<Event> eventList = await getEvents(userID); "
+        // You should only allow the user in cache to use it's own id
+        // I'm not sure if the List and ArrayList will have incompatiblities text me if it doesn't work - Bernardo
+        public async Task<List<Event>> getEvents(int userID) 
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync("/user?userID=" + userID))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsAsync<List<Event>>();
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
 
-        //public async Task<List<Event>> getEvents(int userID) { return null; }
         //public async Task<string> createEvent(Event event) { return null; }
         //public async Task<string> updateEvent(Event event) { return null; }
 
