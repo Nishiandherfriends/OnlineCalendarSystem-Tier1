@@ -9,6 +9,9 @@ namespace OnlineCalendarSystem_Tier1.Data
 {
     public class OnlineCalendarService
     {
+        // This method will return a Task<User> that can be parsed into a User
+        // You just need to copy this " User user = await login(username, password); "
+        // The user class will already have an ID and a Security level
         public async Task<User> login(string username, string password)
         {
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync("/user?username=" + username + "&password=" + password))
@@ -24,6 +27,9 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
+        // This method will return a Task<string> that can be parsed into a string if the request is successful
+        // You just need to copy this " String string = await createUser(username, password); "
+        // The user class will always have a level two security exept for the admin which has already been created
         public async Task<string> createUser(string username, string password)
         {
             using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/user?username=" + username + "&password=" + password, ""))
@@ -41,9 +47,11 @@ namespace OnlineCalendarSystem_Tier1.Data
 
         //public async Task<string> updateUser(User user) { return null; }
 
+
         //public async Task<ArrayList<Event>> getEvents(int userID) { return null; }
         //public async Task<string> createEvent(Event event) { return null; }
         //public async Task<string> updateEvent(Event event) { return null; }
+
 
         //public async Task<Invite> getInvites(int userID) { return null; }
         //public async Task<string> invitePersonToEvent(String username, Event event) { return null; }
