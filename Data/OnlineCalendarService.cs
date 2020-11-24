@@ -66,7 +66,7 @@ namespace OnlineCalendarSystem_Tier1.Data
         }
 
 
-        //public async Task<ArrayList<Event>> getEvents(int userID) { return null; }
+        //public async Task<List<Event>> getEvents(int userID) { return null; }
         //public async Task<string> createEvent(Event event) { return null; }
         //public async Task<string> updateEvent(Event event) { return null; }
 
