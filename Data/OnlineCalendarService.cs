@@ -84,8 +84,42 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        //public async Task<string> createEvent(Event event) { return null; }
-        //public async Task<string> updateEvent(Event event) { return null; }
+        // This method creates an event in the database when inputed the userID of the user whos creating it and an event object
+        // You just need to copy this " String string = await createEvent(userID, evt); "
+        // This method has only been tested in the java side and might not work on c# because of the event class
+        // You can put any id in the event because it is going to be overitten by the database
+        public async Task<string> createEvent(int userID, Event evt) 
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsJsonAsync("/user?userID=" + userID + "&event=" + evt, ""))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return "Success";
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+        // This method updates the event you just need to input a new one PLEASE don't change the id because in this method it is important to find the event in the database
+        // You just need to copy this " String string = await updateEvent(evt); "
+        // This method has only been tested in the java side and might not work on c# because of the event class
+        public async Task<string> updateEvent(Event evt) 
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/user?event=" + evt, ""))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return "Success";
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
 
 
         //public async Task<Invite> getInvites(int userID) { return null; }
