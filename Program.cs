@@ -2,6 +2,7 @@
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using OnlineCalendarSystem_Tier1.Data;
 
 namespace OnlineCalendarSystem_Tier1
 {
@@ -9,6 +10,7 @@ namespace OnlineCalendarSystem_Tier1
     {
         public static void Main(string[] args)
         {
+            ApiHelper.InitializeClient(); // This is important so the api work properly
             CreateHostBuilder(args).Build().Run();
         }
 
