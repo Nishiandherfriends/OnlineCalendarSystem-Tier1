@@ -9,9 +9,12 @@ namespace OnlineCalendarSystem_Tier1.Data
 {
     public class OnlineCalendarService
     {
-        // This method will return a Task<User> that can be parsed into a User
-        // You just need to copy this " User user = await login(username, password); "
-        // The user class will already have an ID and a Security level
+        /// <summary>
+        /// Allows the user to login.
+        /// </summary>
+        /// <param name="username">The username of the user.</param>
+        /// <param name="password">The password of the user.</param>
+        /// <returns>A user object if the login is successful.</returns>
         public async Task<User> login(string username, string password)
         {
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync("/user?username=" + username + "&password=" + password))
@@ -27,16 +30,19 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        // This method will return a Task<string> that can be parsed into a string if the request is successful
-        // You just need to copy this " String string = await createUser(username, password); "
-        // The user class will always have a level two security exept for the admin which has already been created
+        /// <summary>
+        /// Allows the user to create an account.
+        /// </summary>
+        /// <param name="username">The new username of the user.</param>
+        /// <param name="password">The new password of the user.</param>
+        /// <returns>A string with a success or error message.</returns>
         public async Task<string> createUser(string username, string password)
         {
             using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsJsonAsync("/user?username=" + username + "&password=" + password, ""))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    return "Success";
+                    return await response.Content.ReadAsAsync<string>();
                 }
                 else
                 {
@@ -45,18 +51,20 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        // This method will return a Task<string> that can be parsed into a string if the request is successful
-        // You just need to copy this " String string = await updateUser(username, password, id); "
-        // This method should only alter the user details from the user that's logged in
-        // You should put the details even if you don't want to change them
-        // The id can't change because it'll be used to find the user in the database
+        /// <summary>
+        /// Allows the user to change the details of its own account.
+        /// </summary>
+        /// <param name="username">The new/old username depending on the wishes of the user.</param>
+        /// <param name="password">The new/old password depending on the wishes of the user.</param>
+        /// <param name="id">The id of the user that is changing its details</param>
+        /// <returns>A string with a success or error message.</returns>
         public async Task<string> updateUser(string username, string password, int id) 
         {
             using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/user?username=" + username + "&password=" + password + "&id=" + id, ""))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    return "Success";
+                    return await response.Content.ReadAsAsync<string>();
                 }
                 else
                 {
@@ -65,13 +73,14 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        // This method will return all Events for a given user when it's id is inputed
-        // You just need to copy this " List<Event> eventList = await getEvents(userID); "
-        // You should only allow the user in cache to use it's own id
-        // I'm not sure if the List and ArrayList will have incompatiblities text me if it doesn't work - Bernardo
+        /// <summary>
+        /// Gets the events that the user is participating in.
+        /// </summary>
+        /// <param name="userID">The id of the user.</param>
+        /// <returns>A list of events.</returns>
         public async Task<List<Event>> getEvents(int userID) 
         {
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync("/user?userID=" + userID))
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync("/event?userID=" + userID))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -84,17 +93,19 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        // This method creates an event in the database when inputed the userID of the user whos creating it and an event object
-        // You just need to copy this " String string = await createEvent(userID, evt); "
-        // This method has only been tested in the java side and might not work on c# because of the event class
-        // You can put any id in the event because it is going to be overitten by the database
+        /// <summary>
+        /// Allows the user to create an event.
+        /// </summary>
+        /// <param name="userID">The username of the user creating the event.</param>
+        /// <param name="evt">The event that is going to be created, the id does not matter because it will be overwritten by the database.</param>
+        /// <returns>A string with a success or error message.</returns>
         public async Task<string> createEvent(int userID, Event evt) 
         {
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsJsonAsync("/user?userID=" + userID + "&event=" + evt, ""))
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsJsonAsync("/event?userID=" + userID + "&event=" + evt, ""))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    return "Success";
+                    return await response.Content.ReadAsAsync<string>();
                 }
                 else
                 {
@@ -103,16 +114,18 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        // This method updates the event you just need to input a new one PLEASE don't change the id because in this method it is important to find the event in the database
-        // You just need to copy this " String string = await updateEvent(evt); "
-        // This method has only been tested in the java side and might not work on c# because of the event class
+        /// <summary>
+        /// Allows the user to update an event (the id needs to be the same so the correct user is overwritten and no errors happen in the database).
+        /// </summary>
+        /// <param name="evt">The new event object that is going to overwrite the one on the database.</param>
+        /// <returns>A string with a success or error message.</returns>
         public async Task<string> updateEvent(Event evt) 
         {
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/user?event=" + evt, ""))
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/event?event=" + evt, ""))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    return "Success";
+                    return await response.Content.ReadAsAsync<string>();
                 }
                 else
                 {
@@ -121,10 +134,108 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
+        /// <summary>
+        /// Allows the user to delete an event (in which he is participating).
+        /// </summary>
+        /// <param name="eventID">The id of the event that is going to be deleted.</param>
+        /// <returns>A string with a success or error message.</returns>
+        public async Task<string> deleteEvent(int eventID)
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.DeleteAsync("/event?eventID=" + eventID))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsAsync<string>();
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
 
-        //public async Task<Invite> getInvites(int userID) { return null; }
-        //public async Task<string> invitePersonToEvent(String username, Event event) { return null; }
-        //public async Task<string> addPersonToEvent(int id, Event event) { return null; }
-        //public async Task<string> removePersonFromEvent(String username, Event event) { return null; }
+        /// <summary>
+        /// Gets the invites to the events the user was invited to.
+        /// </summary>
+        /// <param name="userID">The id of the user.</param>
+        /// <returns>A list of invites.</returns>
+        public async Task<Invite> getInvites(int userID)
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync("/invite?userID=" + userID))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsAsync<Invite>();
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Allows the user to invite someone to an event.
+        /// </summary>
+        /// <param name="userInvitedUsername">The username of the user that is being invited.</param>
+        /// <param name="userInvitingID">The id of the user that is inviting the other one.</param>
+        /// <param name="eventID">The id of the event.</param>
+        /// <returns>A string with a success or error message.</returns>
+        public async Task<string> invitePersonToEvent(String userInvitedUsername, int userInvitingID, int eventID)
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsJsonAsync("/invite?userInvitedUsername=" + userInvitedUsername + "&userInvitingID" + userInvitingID + "&eventID=" + eventID, ""))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsAsync<string>();
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Adds the person to the event after they accept the invite.
+        /// </summary>
+        /// <param name="id">The id of the user that accepted the invite.</param>
+        /// <param name="eventID">The id of the event.</param>
+        /// <returns>A string with a success or error message.</returns>
+        public async Task<string> addPersonToEvent(int id, int eventID)
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/invite?id=" + id + "&eventID=" + eventID, ""))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsAsync<string>();
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Allows the user to delete someone from an event.
+        /// </summary>
+        /// <param name="username">The username of the user that is going to be deleted from the event.</param>
+        /// <param name="eventID">The id of the event.</param>
+        /// <returns>A string with a success or error message.</returns>
+        public async Task<string> removePersonFromEvent(String username, int eventID)
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.DeleteAsync("/invite?username=" + username + "&eventID=" + eventID))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsAsync<string>();
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
     }
 }
