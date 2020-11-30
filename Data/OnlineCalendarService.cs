@@ -278,6 +278,25 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        // public async Task<string> deleteInvite
+        /// <summary>
+        /// Deletes an invite.
+        /// </summary>
+        /// <param name="userID">The id of the user that was invited.</param>
+        /// <param name="eventID">The id of the event to which the user was invited.</param>
+        /// <returns>A string with a success or error message.</returns>
+        public async Task<string> deleteInvite(int userID, int eventID)
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.DeleteAsync("/invite?userID=" + userID + "&eventID=" + eventID))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsAsync<string>();
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
     }
 }
