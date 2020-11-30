@@ -56,11 +56,31 @@ namespace OnlineCalendarSystem_Tier1.Data
         /// </summary>
         /// <param name="username">The new/old username depending on the wishes of the user.</param>
         /// <param name="password">The new/old password depending on the wishes of the user.</param>
-        /// <param name="id">The id of the user that is changing its details</param>
+        /// <param name="id">The id of the user that is changing its details.</param>
         /// <returns>A string with a success or error message.</returns>
         public async Task<string> updateUser(string username, string password, int id) 
         {
             using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/user?username=" + username + "&password=" + password + "&id=" + id, ""))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsAsync<string>();
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Deletes the user.
+        /// </summary> 
+        /// <param name="userID">The id of the user that is going to be deleted.</param>
+        /// <returns>A string with a success or error message.</returns>
+        public async Task<string> deleteUser(int userID)
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.DeleteAsync("/user?userID=" + userID))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -97,7 +117,7 @@ namespace OnlineCalendarSystem_Tier1.Data
         /// Allows the user to create an event.
         /// </summary>
         /// <param name="userID">The username of the user creating the event.</param>
-        /// <param name="evt">The event that is going to be created, the id does not matter because it will be overwritten by the database.</param>
+        /// <param name="evt">The event that is going to be created (the id does not matter because it will be overwritten by the database.)</param>
         /// <returns>A string with a success or error message.</returns>
         public async Task<string> createEvent(int userID, Event evt) 
         {
@@ -142,6 +162,47 @@ namespace OnlineCalendarSystem_Tier1.Data
         public async Task<string> deleteEvent(int eventID)
         {
             using (HttpResponseMessage response = await ApiHelper.ApiClient.DeleteAsync("/event?eventID=" + eventID))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsAsync<string>();
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets all the participants in a certain event.
+        /// </summary>
+        /// <param name="eventID">The id of the event all participants are participating.</param>
+        /// <returns>An ArrayList with all the participants usernames.</returns>
+        public async Task<List<string>> getParticipants(int eventID) 
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync("/event2?eventID=" + eventID))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadAsAsync<List<string>>();
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Allows the user to delete someone from an event.
+        /// </summary>
+        /// <param name="username">The username of the user that is going to be deleted from the event.</param>
+        /// <param name="eventID">The id of the event.</param>
+        /// <returns>A string with a success or error message.</returns>
+        public async Task<string> removePersonFromEvent(String username, int eventID)
+        {
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.DeleteAsync("/event2?username=" + username + "&eventID=" + eventID))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -217,25 +278,6 @@ namespace OnlineCalendarSystem_Tier1.Data
             }
         }
 
-        /// <summary>
-        /// Allows the user to delete someone from an event.
-        /// </summary>
-        /// <param name="username">The username of the user that is going to be deleted from the event.</param>
-        /// <param name="eventID">The id of the event.</param>
-        /// <returns>A string with a success or error message.</returns>
-        public async Task<string> removePersonFromEvent(String username, int eventID)
-        {
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.DeleteAsync("/invite?username=" + username + "&eventID=" + eventID))
-            {
-                if (response.IsSuccessStatusCode)
-                {
-                    return await response.Content.ReadAsAsync<string>();
-                }
-                else
-                {
-                    throw new Exception(response.ReasonPhrase);
-                }
-            }
-        }
+        // public async Task<string> deleteInvite
     }
 }
