@@ -5,24 +5,27 @@ using System.Threading.Tasks;
 
 namespace OnlineCalendarSystem_Tier1.Models
 {
+    /// <summary>
+    /// This class holds the event informations such as id, title, description, location, start date and end date.
+    /// </summary>
+    [Serializable]
     public class Event
     {
         public int id { get; set; }
         [NotNull]
         public string title { get; set; }
         public string description { get; set; }
-        public string value { get; set; }
         public string location { get; set; }
-        public string dayName{get;set;}
         [NotNull]
-        public DateTime startDate { get; set; } = new DateTime(2020,1,1);
+        public Date startDate { get; set; }
         [NotNull]
-        public DateTime endDate { get; set; }= new DateTime(2020,1,1);
-        public Event(){
+        public Date endDate { get; set; }
+        public string value { get; set; }
+        public string dayName { get; set; }
 
-        }
+        public Event() {}
 
-        public Event(int id, string title, string description, string location, DateTime startDate, DateTime endDate)
+        public Event(int id, string title, string description, string location, Date startDate, Date endDate)
         {
             this.id = id;
             this.title = title;

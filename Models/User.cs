@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace OnlineCalendarSystem_Tier1.Models
 {
+    /// <summary>
+    /// This class holds the information of the user that is logged in, such as id, username, password and securityLevel.
+    /// </summary>
     public class User
     {
         public int id { get; set; }

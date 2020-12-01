@@ -5,8 +5,14 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using OnlineCalendarSystem_Tier1.Login;
+using System.Text;
+
 namespace OnlineCalendarSystem_Tier1.Data
 {
+    /// <summary>
+    /// This is class is used for communicating with the second tier.
+    /// It has all the methods to communicate with the Web Service.
+    /// </summary>
     public class OnlineCalendarService
     {
         /// <summary>
@@ -121,7 +127,9 @@ namespace OnlineCalendarSystem_Tier1.Data
         /// <returns>A string with a success or error message.</returns>
         public async Task<string> createEvent(int userID, Event evt) 
         {
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsJsonAsync("/event?userID=" + userID + "&event=" + evt, ""))
+            var jsonEvent = Newtonsoft.Json.JsonConvert.SerializeObject(evt);
+            var eventToSend = new StringContent(jsonEvent, Encoding.UTF8, "application/json");
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsJsonAsync("/event?userID=" + userID + "&event=" + evt, eventToSend))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -141,7 +149,9 @@ namespace OnlineCalendarSystem_Tier1.Data
         /// <returns>A string with a success or error message.</returns>
         public async Task<string> updateEvent(Event evt) 
         {
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/event?event=" + evt, ""))
+            var jsonEvent = Newtonsoft.Json.JsonConvert.SerializeObject(evt);
+            var eventToSend = new StringContent(jsonEvent, Encoding.UTF8, "application/json");
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/event?event=" + evt, eventToSend))
             {
                 if (response.IsSuccessStatusCode)
                 {

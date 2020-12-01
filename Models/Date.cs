@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 
 namespace OnlineCalendarSystem_Tier1.Models
 {
+    /// <summary>
+    /// This class holds values for year, month, day, hour, minute and second.
+    /// This is used to increase compatibility with the Java part of the program.
+    /// </summary>
     public class Date
     {
-        [NotNull, Range(2020, 2120)]
+        [NotNull, Range(1970, 2170)]
         public int year { get; set; }
         [NotNull, Range(1,12)]
         public int month { get; set; }
