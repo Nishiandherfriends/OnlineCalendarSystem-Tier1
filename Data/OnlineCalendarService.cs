@@ -129,7 +129,7 @@ namespace OnlineCalendarSystem_Tier1.Data
         {
             var jsonEvent = Newtonsoft.Json.JsonConvert.SerializeObject(evt);
             var eventToSend = new StringContent(jsonEvent, Encoding.UTF8, "application/json");
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsJsonAsync("/event?userID=" + userID + "&event=" + evt, eventToSend))
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PostAsJsonAsync("/event?userID=" + userID + "&event=" + eventToSend, ""))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -151,7 +151,7 @@ namespace OnlineCalendarSystem_Tier1.Data
         {
             var jsonEvent = Newtonsoft.Json.JsonConvert.SerializeObject(evt);
             var eventToSend = new StringContent(jsonEvent, Encoding.UTF8, "application/json");
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/event?event=" + evt, eventToSend))
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.PutAsJsonAsync("/event?event=" + eventToSend, ""))
             {
                 if (response.IsSuccessStatusCode)
                 {
