@@ -1,6 +1,7 @@
 ﻿@page "/calendar"
 @using OnlineCalendarSystem_Tier1.Models
-
+@using OnlineCalendarSystem_Tier1.Data
+@inject OnlineCalendarSystem_Tier1.Data.OnlineCalendarService OnlineCalendarService
 <style type="text/css">
     #tblParent tbody tr td {
         width: 200px;
@@ -45,7 +46,7 @@
                             <label>From Date : </label>
                         </div>
                         <div class="col-md-8">
-                            <input type="date" style="width:100%;" />
+                            <input type="date" bind-value ="" style="width:100%;" />
                         </div>
                     </div>
                 </div>
@@ -120,7 +121,7 @@
 </table>
 
 @code{
-    
+    OnlineCalendarService dayEvent =new OnlineCalendarService();
     List<string> monthNames = new List<string>();
     List<string> days = new List<string>();
     List<Week> weeks = new List<Week>();

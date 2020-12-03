@@ -3,9 +3,11 @@
 @using OnlineCalendarSystem_Tier1.Login
 @using OnlineCalendarSystem_Tier1.Models
 @using login
+@using OnlineCalendarSystem_Tier1.Data
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
 @inject IUser UserService
+@inject OnlineCalendarSystem_Tier1.Data.OnlineCalendarService OnlineCalendarService
 <div class="row">
     <div class="col-6 card">
         <div class="col-12 row">
@@ -31,7 +33,7 @@
                     <br />
                     <div class="col-12 row">
                         <span class="col-12"></span>
-                        <a href="" @onclick="PerformLogin">
+                        <a href="" onclick="@dayEvent.login(username,password)">
                             <button class="btn btn-outline-dark" type="submit">Log in</button>
                         </a>
                     </div>
@@ -49,7 +51,7 @@
 
 @code{
     private User user;
-
+    OnlineCalendarService dayEvent = new OnlineCalendarService();
     private string username;
     private string password;
     private string errorMessage;
