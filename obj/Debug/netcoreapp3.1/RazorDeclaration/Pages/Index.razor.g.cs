@@ -82,6 +82,13 @@ using OnlineCalendarSystem_Tier1.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\Pages\Index.razor"
+using OnlineCalendarSystem_Tier1.Data;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/calendar")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -91,9 +98,9 @@ using OnlineCalendarSystem_Tier1.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 122 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\Pages\Index.razor"
+#line 123 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\Pages\Index.razor"
       
-    
+    OnlineCalendarService dayEvent =new OnlineCalendarService();
     List<string> monthNames = new List<string>();
     List<string> days = new List<string>();
     List<Week> weeks = new List<Week>();
@@ -177,6 +184,7 @@ using OnlineCalendarSystem_Tier1.Models;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private OnlineCalendarSystem_Tier1.Data.OnlineCalendarService OnlineCalendarService { get; set; }
     }
 }
 #pragma warning restore 1591

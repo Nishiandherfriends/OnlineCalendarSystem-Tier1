@@ -96,6 +96,13 @@ using login;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\Pages\Login.razor"
+using OnlineCalendarSystem_Tier1.Data;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.LayoutAttribute(typeof(LoginLayout))]
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Login : Microsoft.AspNetCore.Components.ComponentBase
@@ -106,10 +113,10 @@ using login;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 50 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\Pages\Login.razor"
+#line 52 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\Pages\Login.razor"
       
     private User user;
-
+    OnlineCalendarService dayEvent = new OnlineCalendarService();
     private string username;
     private string password;
     private string errorMessage;
@@ -154,6 +161,7 @@ using login;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private OnlineCalendarSystem_Tier1.Data.OnlineCalendarService OnlineCalendarService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUser UserService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }

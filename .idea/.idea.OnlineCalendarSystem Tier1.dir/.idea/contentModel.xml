@@ -40,10 +40,12 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Pages" t="Include">
         <e p="_Host.cshtml" t="Include" />
+        <e p="calendar.html" t="Include" />
         <e p="Counter.razor" t="Include" />
         <e p="Error.cshtml" t="Include" />
         <e p="Index.razor" t="Include" />
         <e p="Login.razor" t="Include" />
+        <e p="main.css" t="Include" />
       </e>
       <e p="Program.cs" t="Include" />
       <e p="Properties" t="Include">
