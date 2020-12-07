@@ -89,7 +89,7 @@ using OnlineCalendarSystem_Tier1.Data;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/calendar")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -97,93 +97,6 @@ using OnlineCalendarSystem_Tier1.Data;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 123 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\Pages\Index.razor"
-      
-    OnlineCalendarService dayEvent =new OnlineCalendarService();
-    List<string> monthNames = new List<string>();
-    List<string> days = new List<string>();
-    List<Week> weeks = new List<Week>();
-    DateTime startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-    DateTime endDate = (new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1)).AddMonths(1).AddDays(-1);
-    bool displayModal = false;
-
-    protected override void OnInitialized()
-    {
-        monthNames = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.MonthGenitiveNames.ToList();
-        GenerateCalenderHeader();
-        GenerateCalenderBody();
-    }
-    private void LocalCalender(ChangeEventArgs e)
-    {
-        var month = e.Value.ToString();
-        int monthIndex = DateTime.ParseExact(month, "MMMM", System.Globalization.CultureInfo.CreateSpecificCulture("en-GB")).Month;
-        startDate = new DateTime(DateTime.Now.Year, monthIndex, 1);
-        endDate = (new DateTime(DateTime.Now.Year, monthIndex, 1)).AddMonths(1).AddDays(-1);
-
-        GenerateCalenderHeader();
-        GenerateCalenderBody();
-    }
-    private void GenerateCalenderHeader()
-    {
-        var day1 = new List<string>();
-        for (var dt = startDate; dt <= endDate; dt = dt.AddDays(1))
-        {
-            day1.Add(dt.ToString("dddd"));
-        }
-        days = day1.Distinct().ToList();
-    }
-    private void GenerateCalenderBody()
-    {
-        weeks = new List<Week>();
-
-        int flag = 0;
-        Week week = new Week();
-        List<Event> dates = new List<Event>();
-        var totalDays = (int)(endDate - startDate).TotalDays;
-        int countdays = 0;
-
-        for (var dt = startDate; dt <= endDate; dt = dt.AddDays(1))
-        {
-            flag++;
-
-            dates.Add(new Event()
-            {
-                value = dt.ToString("dd-MMM-yyyy"),
-                dayName = dt.ToString("dddd")
-            });
-
-            if (flag == 7)
-            {
-                week = new Week();
-                week.Dates = dates;
-                weeks.Add(week);
-
-                dates = new List<Event>();
-                flag = 0;
-            }
-            if (countdays == totalDays)
-            {
-                week = new Week();
-                week.Dates = dates;
-                weeks.Add(week);
-                break;
-            }
-            countdays++;
-        }
-    }
-    private void CloseModal()
-    {
-        displayModal = false;
-    }
-    private void OpenModal(int wIndex, int dIndex)
-    {
-        displayModal = true;
-    }
-
-#line default
-#line hidden
-#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private OnlineCalendarSystem_Tier1.Data.OnlineCalendarService OnlineCalendarService { get; set; }
     }
 }

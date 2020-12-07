@@ -18,10 +18,8 @@ namespace OnlineCalendarSystem_Tier1.Models
         public string location { get; set; }
         [NotNull]
         public Date startDate { get; set; }
-        [NotNull]
-        public Date endDate { get; set; }
-        public string value { get; set; }
-        public string dayName { get; set; }
+
+        [NotNull] public Date endDate { get; set; }
 
         public Event() {}
 

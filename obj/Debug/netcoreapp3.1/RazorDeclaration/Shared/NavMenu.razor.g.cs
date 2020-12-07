@@ -75,6 +75,20 @@ using OnlineCalendarSystem_Tier1.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\_Imports.razor"
+using OnlineCalendarSystem_Tier1.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\_Imports.razor"
+using OnlineCalendarSystem_Tier1.Data;
+
+#line default
+#line hidden
+#nullable disable
     public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -83,7 +97,7 @@ using OnlineCalendarSystem_Tier1.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\Shared\NavMenu.razor"
+#line 21 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

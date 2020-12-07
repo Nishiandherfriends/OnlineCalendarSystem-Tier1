@@ -1,8 +1,156 @@
-﻿@page "/calendar"
+﻿@page "/"
 @using OnlineCalendarSystem_Tier1.Models
 @using OnlineCalendarSystem_Tier1.Data
 @inject OnlineCalendarSystem_Tier1.Data.OnlineCalendarService OnlineCalendarService
-<style type="text/css">
+<style>
+    header{
+        padding: 25px;
+    }
+    .shadow{
+        transition: 0.3s
+    }
+    .shadow:hover{
+        -webkit-box-shadow: 0px 4px 15px -6px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 4px 15px -6px rgba(0,0,0,0.75);
+        box-shadow: 0px 4px 15px -6px rgba(0,0,0,0.75);;
+    }
+    .calendar{
+        padding: 10px;
+    }
+    .calendar-table{
+        margin: 10px;
+        width: 100%;
+        background-color: #f3f2f1;
+        text-align: center;
+    }
+    .calendar-table thead{
+        background-color: white;
+    }
+    .calendar-table td{
+        padding: 4px;
+    }
+    .calendar-table .day{
+        width: 125px;
+        height: 125px;
+        min-width: 125px;
+        margin:5px;
+        border-radius: 5px;
+        background-color: white;
+        padding: 5px;
+        cursor: pointer;
+    }
+    .current-day{
+        border: 2px solid  #1b6ec2;
+        color: #1b6ec2;
+    }
+    .selected-day{
+        border: 2px solid #002752;
+        color:#002752;
+        background-color: #abdde5 !important;
+    }
+     .day .day-event{
+        font-size: 10px;
+        padding: 5px;
+    }
+    .red-orange {
+        background: #da3b01;
+        color: white;
+    }
+    
+    .magenta {
+        background: #881798;
+        color: white;
+    }
+    
+    .pink-red {
+        background-color: #750b1c;
+        color: white;
+    }
+    
+    .yellow {
+        background: #fce100;
+        color: black;
+    }
+    
+    .yellow-green {
+        background: #8cbd18;
+        color: black;
+    }
+    .calendar-toolbar{
+        background-color: #1b6ec2;
+        color: white;
+    }
+    .toolbar-button{
+        background: #1b6ec2;
+        margin: 0px;
+        padding: 5px 10px;
+        text-align: center;
+        vertical-align: middle;
+        outline: none;
+        font-size: 25px;
+        font-weight: 100;
+        color:white;
+        border:none;
+    }
+    .toolbar-button:hover{
+        background: #002752;
+    }
+    .toolbar-button:focus{
+        border: none;
+        outline:none;
+    }
+    .fl-input{
+        display: block;
+        width:100%;
+        padding: 3px 7px;
+        margin: 10px 0px;
+        border: 1px solid #3b3a39;
+    }
+    .input:focus{
+        outline:none;
+        border: 2px dashed #1b6ec2;
+    }
+    .card-div{
+        padding: 10px;
+    }
+    .event {
+        border-radius: 5px;
+        margin: 10px 5px;
+        padding: 5px;
+    }
+    .card{
+        margin:10px;
+    }
+</style>
+<header>
+    <h3 class="ms-fontSize-40 ms-fontWeight-regular"> Online Calendar System</h3>
+    <p class="ms-fontSize-15 ms-fontWeight-regular"> Welcome to our SEP3 group project</p>
+    <AuthorizeView>
+        <NotAuthorized>
+        <p class="ms-fontSize-15 ms-fontWeight-regular"> Please <a href="login" class="shadow">sign in</a> to get started</p>
+    </NotAuthorized>
+        </AuthorizeView>
+</header>
+ <div class="row">
+     <div class="col-sm-12 col-md-12  col-lg-9">
+         <Calendar>
+             <DayTemplate Context="day">
+                 @{
+                     string currentDay = day.DateTime == DateTime.Now.Date ? "current-date" : "";                       
+                 }
+                 @if (!day.isEmpty)
+                 {
+                     <div class="day shadow @currentDay">
+                         <h3 class="ms-fontSize-20 ms-fontWeight-regular">@day.day</h3>
+                     </div>
+                 }
+             </DayTemplate>
+         </Calendar>
+         
+     </div>
+ </div>
+
+@*<style type="text/css">
     #tblParent tbody tr td {
         width: 200px;
         height: 200px;
@@ -202,3 +350,4 @@
         displayModal = true;
     }
 }
+*@
