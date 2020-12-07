@@ -97,6 +97,19 @@ using OnlineCalendarSystem_Tier1.Data;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 172 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\Pages\Index.razor"
+      
+
+    private Date selectedDay = new Date
+    {
+        DateTime = DateTime.Now
+    };
+
+
+#line default
+#line hidden
+#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private OnlineCalendarSystem_Tier1.Data.OnlineCalendarService OnlineCalendarService { get; set; }
     }
 }

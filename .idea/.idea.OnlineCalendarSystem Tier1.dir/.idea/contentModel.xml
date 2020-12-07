@@ -15,6 +15,7 @@
       <e p="Data" t="Include">
         <e p="ApiHelper.cs" t="Include" />
         <e p="OnlineCalendarService.cs" t="Include" />
+        <e p="RandomColor.cs" t="Include" />
       </e>
       <e p="Login" t="Include">
         <e p="Authentication.cs" t="Include" />
@@ -40,9 +41,10 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Pages" t="Include">
         <e p="_Host.cshtml" t="Include" />
+        <e p="AddEvent.razor" t="Include" />
         <e p="Calendar.razor" t="Include" />
-        <e p="Counter.razor" t="Include" />
         <e p="Error.cshtml" t="Include" />
+        <e p="EventList.razor" t="Include" />
         <e p="Index.razor" t="Include" />
         <e p="Login.razor" t="Include" />
       </e>

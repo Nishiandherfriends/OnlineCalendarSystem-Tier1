@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
+using OnlineCalendarSystem_Tier1.Data;
 
 namespace OnlineCalendarSystem_Tier1.Models
 {
@@ -17,13 +18,17 @@ namespace OnlineCalendarSystem_Tier1.Models
         public string description { get; set; }
         public string location { get; set; }
         [NotNull]
-        public Date startDate { get; set; }
+        public DateTime startDate { get; set; }
+    
+        [NotNull] public DateTime endDate { get; set; }
+        public string Color {get; private set;}
 
-        [NotNull] public Date endDate { get; set; }
+        public Event()
+        {
+            Color = RandomColor.GetColor();
+        }
 
-        public Event() {}
-
-        public Event(int id, string title, string description, string location, Date startDate, Date endDate)
+        public Event(int id, string title, string description, string location, DateTime startDate, DateTime endDate)
         {
             this.id = id;
             this.title = title;

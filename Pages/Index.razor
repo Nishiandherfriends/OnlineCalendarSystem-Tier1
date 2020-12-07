@@ -136,19 +136,47 @@
          <Calendar>
              <DayTemplate Context="day">
                  @{
-                     string currentDay = day.DateTime == DateTime.Now.Date ? "current-date" : "";                       
+                     string currentDayClass = day.DateTime == DateTime.Now.Date ? "current-date" : "";
+                     string selectedDayClass = day == selectedDay ? "selected-day" : "";
                  }
                  @if (!day.isEmpty)
                  {
-                     <div class="day shadow @currentDay">
+                     <div class="day shadow @currentDayClass @selectedDayClass" @onclick="() =>selectedDay = day">
                          <h3 class="ms-fontSize-20 ms-fontWeight-regular">@day.day</h3>
+                         @if (day.Events != null && day.Events.Count != 0)
+                         {
+                             var eventpop = day.Events.FirstOrDefault();
+                             <div class="day-event @eventpop.Color">
+                                 @if (eventpop.description.Length > 30)
+                                 {
+                                     @eventpop.description.Substring(0, 30);
+                                 }
+                                 else
+                                 {
+                                     @eventpop.description
+                                 }
+                             </div>
+                         }
                      </div>
                  }
              </DayTemplate>
          </Calendar>
          
      </div>
+     <div class="col-sm-12 col-md-12 col-lg-3">
+         <AddEvent EventDay="selectedDay"/> 
+         <EventList EventDay="selectedDay"/>
+     </div>
  </div>
+
+@code{
+
+    private Date selectedDay = new Date
+    {
+        DateTime = DateTime.Now
+    };
+
+}
 
 @*<style type="text/css">
     #tblParent tbody tr td {

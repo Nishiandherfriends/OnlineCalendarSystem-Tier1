@@ -1,0 +1,41 @@
+﻿ @inject OnlineCalendarService OnlineCalendarService
+
+ <div class="ms-depth-18 card">
+     <EditForm model="_event" OnValidSubmit="addEventToSelectedDay">
+     <div class="calendar-toolbar">
+         <button class="toolbar-button" type="submit"><i class="ms-Icon ms-Icon--AddEvent"></i> Add Event</button>
+     </div>
+     
+     <div class="card-div">
+         <h3 class="ms-fontsize-25 ms-fontweight-regular">@EventDay.DateTime.ToString("D")</h3>
+         <input type="text" @bind-value="_event.description" class="fl-input" placeholder="Event">
+         <input type="time" @bind-value="_event.startDate" class="fl-input" placeholder="Event">
+         <input type="time" @bind-value="_event.endDate" class="fl-input" placeholder="Event">
+     </div>
+      </EditForm>
+ </div>
+@code {
+    [Parameter]
+    public Date EventDay { get; set; }
+    private Event _event = new Event();
+
+    private void addEventToSelectedDay()
+    {
+        _event.startDate = new DateTime(EventDay.DateTime.Year, EventDay.DateTime.Date.Month, EventDay.DateTime.Day, _event.startDate.Hour, _event.startDate.Minute, 0);
+        _event.endDate = new DateTime(EventDay.DateTime.Year, EventDay.DateTime.Date.Month, EventDay.DateTime.Day, _event.endDate.Hour, _event.endDate.Minute, 0);
+        if (EventDay.Events == null)
+        {
+            EventDay.Events = new List<Event>();
+        }
+        var calendarEvent = new Event
+        {
+            description = _event.description,
+            startDate = _event.startDate,
+            endDate = _event.endDate
+        };
+        EventDay.Events.Add(calendarEvent);
+        
+        Console.WriteLine($"Total Events in Day {EventDay.Events.Count} | {_event.description} | {_event.startDate} | {_event.endDate}");
+        _event = new Event();
+    }
+}
