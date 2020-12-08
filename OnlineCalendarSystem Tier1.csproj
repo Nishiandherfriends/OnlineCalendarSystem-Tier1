@@ -10,10 +10,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Pages\main.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+    <None Include="wwwroot\calendar.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Counter.razor" />
   </ItemGroup>
 
 </Project>

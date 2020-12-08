@@ -75,6 +75,20 @@ using OnlineCalendarSystem_Tier1.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\_Imports.razor"
+using OnlineCalendarSystem_Tier1.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\_Imports.razor"
+using OnlineCalendarSystem_Tier1.Data;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998
@@ -82,16 +96,6 @@ using OnlineCalendarSystem_Tier1.Shared;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 23 "C:\Users\javic\RiderProjects\OnlineCalendarSystem-Tier1\Shared\MainLayout.razor"
-      
-    public void Logout(){
-        
-    }
-
-#line default
-#line hidden
-#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
     }
 }
