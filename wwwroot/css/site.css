@@ -1,6 +1,14 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
 
+.middle-box{
+    margin:auto;
+    margin-top:150px;
+    width:450px;
+    padding:30px;
+    box-shadow: 5px 10px 18px #888888;
+    border-radius: 20px;
+}
 
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;

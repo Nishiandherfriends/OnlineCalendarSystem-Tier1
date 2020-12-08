@@ -42,7 +42,7 @@ namespace OnlineCalendarSystem_Tier1.Data
         /// <param name="username">The new username of the user.</param>
         /// <param name="password">The new password of the user.</param>
         /// <returns>A string with a success or error message.</returns>
-        public async Task<string> createUser(string username, string password)
+        public static async Task<string> createUser(string username, string password)
         {
             using (HttpResponseMessage response = await ApiHelper.GetApiClient().PostAsJsonAsync("/user?username=" + username + "&password=" + password, ""))
             {

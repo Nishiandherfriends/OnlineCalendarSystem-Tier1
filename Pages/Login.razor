@@ -7,54 +7,40 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
 @inject IUser UserService
-@inject OnlineCalendarSystem_Tier1.Data.OnlineCalendarService OnlineCalendarService
+@inject OnlineCalendarService OnlineCalendarService
 <div class="row">
-    <div class="col-6 card">
-        <div class="col-12 row">
+    <div class="col-12">
+        <h2>Login to your account</h2>
+        <EditForm Model="user" OnValidSubmit="PerformLogin">
+            <RadzenCard>
+                <DataAnnotationsValidator />
+                <ValidationSummary />
 
-            <div class="col-6">
-                <form>
-                    <div>
-                        <br /><br /><br /><br /><br />
-                    </div>
-                    <div>
-                        <h3 style="font-weight:bold; color:purple">Calendar Login</h3>
-                    </div>
-                    <div>
-                        <br />
-                    </div>
-                    <div class="col-12 row">
-                        <input name='username' placeholder='Username' type='text' @bind-value="username">
-                    </div>
-                    <br />
-                    <div class="col-12 row">
-                        <input name='password' placeholder='Password' type='password' @bind-value="password">
-                    </div>
-                    <br />
-                    <div class="col-12 row">
-                        <span class="col-12"></span>
-                        <a href="" onclick="@dayEvent.login(username,password)">
-                            <button class="btn btn-outline-dark" type="submit">Log in</button>
-                        </a>
-                    </div>
-                    <br />
-                </form>
-            </div>
-            <div class="col-6">
-                <img src="/images/pngegg.png" style="margin-top: 40px;" width="300px" height="300px" />
-            </div>
-        </div>
+                <label>Username</label>
+                <RadzenTextBox @bind-Value="user.username"></RadzenTextBox>
+
+                <label>Password</label>
+                <RadzenPassword @bind-Value="user.password"></RadzenPassword>
+
+                <hr />
+                <RadzenButton ButtonType="Radzen.ButtonType.Submit" Text="Login"
+                              ButtonStyle="Radzen.ButtonStyle.Primary" class="btn-block mr-2"
+                              Disabled="isBusy" />
+                <RadzenButton ButtonType="Radzen.ButtonType.Button" Text="Register"
+                              ButtonStyle="Radzen.ButtonStyle.Secondary" class="btn-block mr-2"
+                              Disabled="isBusy" Click="GoToRegister" />
+            </RadzenCard>
+        </EditForm>
     </div>
 </div>
 
 
 
+
 @code{
-    private User user;
-    OnlineCalendarService dayEvent = new OnlineCalendarService();
-    private string username;
-    private string password;
+    private User user = new User();
     private string errorMessage;
+    public bool isBusy { get; set; }
     protected override Task OnInitializedAsync()
     {
         user = new User();
@@ -62,35 +48,20 @@
     }
     public async Task PerformLogin()
     {
+        isBusy = true;
         errorMessage = "";
-        try
+        var result = await OnlineCalendarService.login(user.username, user.password);
+        if (result.Equals(user))
         {
-            ((Authentication)AuthenticationStateProvider).validateLogin(username, password);
-            await OnlineCalendarService.login(username,password);
-            username = "";
-            password = "";
-            NavigationManager.NavigateTo("/calendar");
-        }
-        catch (Exception e)
-        {
-            errorMessage = "404 User not found :( ";
-
-        }
-    }
-
-    public async Task PerformLogOut()
-    {
-        errorMessage = "";
-        username = "";
-        password = "";
-        try
-        {
-            ((Authentication)AuthenticationStateProvider).LogOut();
+            await ((Authentication)AuthenticationStateProvider).validateLogin(user.username, user.password);
+            await AuthenticationStateProvider.GetAuthenticationStateAsync();
             NavigationManager.NavigateTo("/");
         }
-        catch (Exception e)
-        {
-            errorMessage = "404 not found";
-        }
+        isBusy = false;
+    }
+
+    public void GoToRegister()
+    {
+        NavigationManager.NavigateTo("/register");
     }
 }

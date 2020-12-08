@@ -76,6 +76,20 @@ using OnlineCalendarSystem_Tier1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 10 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\_Imports.razor"
+using OnlineCalendarSystem_Tier1.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\_Imports.razor"
+using OnlineCalendarSystem_Tier1.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 12 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\_Imports.razor"
 using Radzen.Blazor;
 
@@ -83,21 +97,15 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\Pages\Index.razor"
-using OnlineCalendarSystem_Tier1.Models;
+#line 3 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\Pages\RegisterUser.razor"
+using OnlineCalendarSystem_Tier1.login;
 
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 3 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\Pages\Index.razor"
-using OnlineCalendarSystem_Tier1.Data;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/calendar")]
-    public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.LayoutAttribute(typeof(AuthLayout))]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/register")]
+    public partial class RegisterUser : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -105,19 +113,25 @@ using OnlineCalendarSystem_Tier1.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 172 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\Pages\Index.razor"
-      
-
-    private Date selectedDay = new Date
+#line 33 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\Pages\RegisterUser.razor"
+       
+    User user =new User();
+    bool flag= false;
+    string message = string.Empty;
+    public bool isSuccess { get; set; }
+    public async Task Register(string username, string password)
     {
-        DateTime = DateTime.Now
-    };
-
+        
+        flag = true;
+        var result = await OnlineCalendarService.createUser(username,password);
+        
+    }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private OnlineCalendarSystem_Tier1.Data.OnlineCalendarService OnlineCalendarService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private Authentication Authentication { get; set; }
     }
 }
 #pragma warning restore 1591

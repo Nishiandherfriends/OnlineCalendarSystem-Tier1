@@ -1,8 +1,11 @@
-﻿<CascadingAuthenticationState>
+﻿
 <Router AppAssembly="@typeof(Program).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-    </Found>
+        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <NotAuthorized>
+            <RedirectToLogin/>
+        </NotAuthorized>
+        </Found>
     <NotFound>
         <CascadingAuthenticationState>
         <LayoutView Layout="@typeof(MainLayout)">
@@ -11,4 +14,3 @@
         </CascadingAuthenticationState>
     </NotFound>
 </Router>
-</CascadingAuthenticationState>

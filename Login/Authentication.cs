@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
+using OnlineCalendarSystem_Tier1.Data;
 using OnlineCalendarSystem_Tier1.Login;
 using OnlineCalendarSystem_Tier1.Models;
 namespace OnlineCalendarSystem_Tier1.login
@@ -14,7 +15,7 @@ namespace OnlineCalendarSystem_Tier1.login
         private readonly IJSRuntime jsRuntime;
         private readonly IUser userService;
         private User cachedUser;
-
+        
         public Authentication(IJSRuntime jsRuntime, IUser userService)
         {
             this.jsRuntime = jsRuntime;
@@ -43,7 +44,7 @@ namespace OnlineCalendarSystem_Tier1.login
             return await Task.FromResult(new AuthenticationState(cashedClaimsPrincipal));
         }
 
-        public void validateLogin(string username, string password)
+        public async Task validateLogin(string username, string password)
         {
             Console.Write("Valid login");
             if (string.IsNullOrEmpty(username)) throw new Exception("Enter username");
@@ -51,20 +52,25 @@ namespace OnlineCalendarSystem_Tier1.login
             ClaimsIdentity identity = new ClaimsIdentity();
             try
             {
-                User user =  userService.ValidateUser(username, password);
+                User user =  await userService.ValidateUser(username, password);
                 identity = SetupClaimsForUser(user);
                 string serializedData = JsonSerializer.Serialize(user);
-                 jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serializedData);
+                await jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serializedData);
                 cachedUser = user;
             }
             catch (Exception e)
             {
                 throw e;
             }
-
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(new ClaimsPrincipal(identity))));
         }
 
+        public async Task RegisterUser(string username, string password)
+        {
+           var result = OnlineCalendarService.createUser(username, password);
+          
+        }
+        
         public void LogOut()
         {
             cachedUser = null;
