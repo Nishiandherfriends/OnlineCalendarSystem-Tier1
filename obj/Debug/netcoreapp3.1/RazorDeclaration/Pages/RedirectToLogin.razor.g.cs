@@ -96,6 +96,7 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/redirectToLogin")]
     public partial class RedirectToLogin : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -103,6 +104,19 @@ using Radzen.Blazor;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 3 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\Pages\RedirectToLogin.razor"
+       
+    protected override void OnInitialized()
+    {
+        NavigationManager.NavigateTo("/login");
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

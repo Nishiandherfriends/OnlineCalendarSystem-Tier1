@@ -233,3 +233,13 @@ C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier
 C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.dll
 C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.pdb
 C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.genruntimeconfig.cache
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\bin\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.StaticWebAssets.xml
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\bin\Debug\netcoreapp3.1\AKSoftware.WebApi.dll
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\bin\Debug\netcoreapp3.1\Radzen.Blazor.dll
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\bin\Debug\netcoreapp3.1\System.Linq.Dynamic.Core.dll
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\RedirectToLogin.razor.g.cs
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\RegisterUser.razor.g.cs
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\AuthLayout.razor.g.cs
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\RedirectToLogin.razor.g.cs
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\RegisterUser.razor.g.cs
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\Razor\Shared\AuthLayout.razor.g.cs

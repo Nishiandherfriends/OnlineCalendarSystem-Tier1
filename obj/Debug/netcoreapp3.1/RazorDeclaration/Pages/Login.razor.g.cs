@@ -120,13 +120,11 @@ using OnlineCalendarSystem_Tier1.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 52 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\Pages\Login.razor"
+#line 40 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\Pages\Login.razor"
       
-    private User user;
-    OnlineCalendarService dayEvent = new OnlineCalendarService();
-    private string username;
-    private string password;
+    private User user = new User();
     private string errorMessage;
+    public bool isBusy { get; set; }
     protected override Task OnInitializedAsync()
     {
         user = new User();
@@ -134,42 +132,27 @@ using OnlineCalendarSystem_Tier1.Data;
     }
     public async Task PerformLogin()
     {
+        isBusy = true;
         errorMessage = "";
-        try
+        var result = await OnlineCalendarService.login(user.username, user.password);
+        if (result.Equals(user))
         {
-            ((Authentication)AuthenticationStateProvider).validateLogin(username, password);
-            await OnlineCalendarService.login(username,password);
-            username = "";
-            password = "";
-            NavigationManager.NavigateTo("/calendar");
-        }
-        catch (Exception e)
-        {
-            errorMessage = "404 User not found :( ";
-
-        }
-    }
-
-    public async Task PerformLogOut()
-    {
-        errorMessage = "";
-        username = "";
-        password = "";
-        try
-        {
-            ((Authentication)AuthenticationStateProvider).LogOut();
+            await ((Authentication)AuthenticationStateProvider).validateLogin(user.username, user.password);
+            await AuthenticationStateProvider.GetAuthenticationStateAsync();
             NavigationManager.NavigateTo("/");
         }
-        catch (Exception e)
-        {
-            errorMessage = "404 not found";
-        }
+        isBusy = false;
+    }
+
+    public void GoToRegister()
+    {
+        NavigationManager.NavigateTo("/register");
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private OnlineCalendarSystem_Tier1.Data.OnlineCalendarService OnlineCalendarService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private OnlineCalendarService OnlineCalendarService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUser UserService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }

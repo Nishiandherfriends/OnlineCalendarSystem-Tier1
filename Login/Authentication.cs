@@ -67,8 +67,8 @@ namespace OnlineCalendarSystem_Tier1.login
 
         public async Task RegisterUser(string username, string password)
         {
-           var result = OnlineCalendarService.createUser(username, password);
-          
+             var result = OnlineCalendarService.createUser(username, password);
+            
         }
         
         public void LogOut()

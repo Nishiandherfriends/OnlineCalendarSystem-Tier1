@@ -40,8 +40,9 @@ namespace OnlineCalendarSystem_Tier1.Login
             return first;
         }
 
-        public async Task<User> AddUser(User user)
+        public async Task<User> AddUser(string username, string password)
         {
+            User user = new User(username, password);
             users.Add(user);
             writeUserToFile(users);
             return user;

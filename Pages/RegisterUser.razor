@@ -1,7 +1,8 @@
 ﻿@page "/register"
 @layout AuthLayout
 @using OnlineCalendarSystem_Tier1.login
-@inject Authentication Authentication
+@using OnlineCalendarSystem_Tier1.Login
+@inject IUser userService
 @inject NavigationManager NavigationManager
 
 <div class="row">
@@ -38,7 +39,7 @@
     public async Task Register()
     {
         flag = true;
-        var result =  OnlineCalendarService.createUser(user.username,user.password);
+        userService.AddUser(user.username, user.password);
         flag = false;
     }
 

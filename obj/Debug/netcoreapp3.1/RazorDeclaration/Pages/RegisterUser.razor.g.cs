@@ -103,6 +103,13 @@ using OnlineCalendarSystem_Tier1.login;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\Pages\RegisterUser.razor"
+using OnlineCalendarSystem_Tier1.Login;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.LayoutAttribute(typeof(AuthLayout))]
     [Microsoft.AspNetCore.Components.RouteAttribute("/register")]
     public partial class RegisterUser : Microsoft.AspNetCore.Components.ComponentBase
@@ -113,25 +120,29 @@ using OnlineCalendarSystem_Tier1.login;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\Pages\RegisterUser.razor"
+#line 34 "C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\Pages\RegisterUser.razor"
        
     User user =new User();
     bool flag= false;
-    string message = string.Empty;
+     
     public bool isSuccess { get; set; }
-    public async Task Register(string username, string password)
+    public async Task Register()
     {
-        
         flag = true;
-        var result = await OnlineCalendarService.createUser(username,password);
-        
+        userService.AddUser(user.username, user.password);
+        flag = false;
+    }
+
+    public void GoToLogin()
+    {
+        NavigationManager.NavigateTo("login");
     }
 
 #line default
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private Authentication Authentication { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUser userService { get; set; }
     }
 }
 #pragma warning restore 1591
