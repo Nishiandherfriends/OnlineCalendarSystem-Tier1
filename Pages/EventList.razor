@@ -13,7 +13,9 @@
                     string color = item.Color;
                     <div class="event shadow @color">
                         <h3 class="ms-fontSize-15 ms-fontWeight-regular">@item.startDate.ToString("HH:mm") to @item.endDate.ToString("HH:mm")</h3>
-                        <p class="ms-fontSize-10 ms-fontWeight-regular">@item.description</p>
+                        <p class="ms-fontSize-10 ms-fontWeight-regular">@item.title</p>
+                        <p class="ms-fontSize-7 ms-fontWeight-regular">@item.description</p>
+                        <p class="ms-fontSize-7 ms-fontWeight-regular">@item.location</p>
                     </div>
                 } 
             }
