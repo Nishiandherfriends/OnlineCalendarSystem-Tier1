@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj",
+  "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -45,35 +45,138 @@
         }
       },
       {
-        "HashCode": 420846051,
+        "HashCode": 778241169,
         "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.Pages.Counter",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.Calendar",
         "AssemblyName": "OnlineCalendarSystem Tier1",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Counter"
+            "TagName": "Calendar"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "DayTemplate",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment<OnlineCalendarSystem_Tier1.Models.Date>",
+            "Metadata": {
+              "Common.PropertyName": "DayTemplate",
+              "Components.ChildContent": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Context",
+            "TypeName": "System.String",
+            "Documentation": "Specifies the parameter name for all child content expressions.",
+            "Metadata": {
+              "Components.ChildContentParameterName": "True",
+              "Common.PropertyName": "Context"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Counter"
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Calendar"
         }
       },
       {
-        "HashCode": -2059298979,
+        "HashCode": -1003813934,
         "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.Pages.Counter",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.Calendar",
         "AssemblyName": "OnlineCalendarSystem Tier1",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "OnlineCalendarSystem_Tier1.Pages.Counter"
+            "TagName": "OnlineCalendarSystem_Tier1.Pages.Calendar"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "DayTemplate",
+            "TypeName": "Microsoft.AspNetCore.Components.RenderFragment<OnlineCalendarSystem_Tier1.Models.Date>",
+            "Metadata": {
+              "Common.PropertyName": "DayTemplate",
+              "Components.ChildContent": "True"
+            }
+          },
+          {
+            "Kind": "Components.Component",
+            "Name": "Context",
+            "TypeName": "System.String",
+            "Documentation": "Specifies the parameter name for all child content expressions.",
+            "Metadata": {
+              "Components.ChildContentParameterName": "True",
+              "Common.PropertyName": "Context"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Counter",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Calendar",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 2032129414,
+        "Kind": "Components.ChildContent",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.Calendar.DayTemplate",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DayTemplate",
+            "ParentTag": "Calendar"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.ChildContent",
+            "Name": "Context",
+            "TypeName": "System.String",
+            "Documentation": "Specifies the parameter name for the 'DayTemplate' child content expression.",
+            "Metadata": {
+              "Components.ChildContentParameterName": "True",
+              "Common.PropertyName": "Context"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Calendar.DayTemplate",
+          "Components.IsSpecialKind": "Components.ChildContent"
+        }
+      },
+      {
+        "HashCode": 1782404512,
+        "Kind": "Components.ChildContent",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.Calendar.DayTemplate",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DayTemplate",
+            "ParentTag": "OnlineCalendarSystem_Tier1.Pages.Calendar"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.ChildContent",
+            "Name": "Context",
+            "TypeName": "System.String",
+            "Documentation": "Specifies the parameter name for the 'DayTemplate' child content expression.",
+            "Metadata": {
+              "Components.ChildContentParameterName": "True",
+              "Common.PropertyName": "Context"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.None",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Calendar.DayTemplate",
+          "Components.IsSpecialKind": "Components.ChildContent",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -140,6 +243,112 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.Login",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 2085005714,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.AddEvent",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "AddEvent"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "EventDay",
+            "TypeName": "OnlineCalendarSystem_Tier1.Models.Date",
+            "Metadata": {
+              "Common.PropertyName": "EventDay"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.AddEvent"
+        }
+      },
+      {
+        "HashCode": -1891931282,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.AddEvent",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "OnlineCalendarSystem_Tier1.Pages.AddEvent"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "EventDay",
+            "TypeName": "OnlineCalendarSystem_Tier1.Models.Date",
+            "Metadata": {
+              "Common.PropertyName": "EventDay"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.AddEvent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 28389107,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.EventList",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "EventList"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "EventDay",
+            "TypeName": "OnlineCalendarSystem_Tier1.Models.Date",
+            "Metadata": {
+              "Common.PropertyName": "EventDay"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.EventList"
+        }
+      },
+      {
+        "HashCode": 1137332378,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Pages.EventList",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "OnlineCalendarSystem_Tier1.Pages.EventList"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "EventDay",
+            "TypeName": "OnlineCalendarSystem_Tier1.Models.Date",
+            "Metadata": {
+              "Common.PropertyName": "EventDay"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Pages.EventList",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -236,59 +445,6 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.LoginLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -171417615,
-        "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
-        "AssemblyName": "OnlineCalendarSystem Tier1",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt"
-        }
-      },
-      {
-        "HashCode": -301741061,
-        "Kind": "Components.Component",
-        "Name": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
-        "AssemblyName": "OnlineCalendarSystem Tier1",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -418,6 +574,59 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -171417615,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt"
+        }
+      },
+      {
+        "HashCode": -301741061,
+        "Kind": "Components.Component",
+        "Name": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
+        "AssemblyName": "OnlineCalendarSystem Tier1",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "OnlineCalendarSystem_Tier1.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -14802,59 +15011,69 @@
   "RootNamespace": "OnlineCalendarSystem_Tier1",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Pages\\Counter.razor",
-      "TargetPath": "Pages\\Counter.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Shared\\SurveyPrompt.razor",
-      "TargetPath": "Shared\\SurveyPrompt.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Pages\\Index.razor",
-      "TargetPath": "Pages\\Index.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Pages\\Login.razor",
-      "TargetPath": "Pages\\Login.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Shared\\LoginLayout.razor",
-      "TargetPath": "Shared\\LoginLayout.razor",
-      "FileKind": "component"
-    },
-    {
-      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Pages\\_Host.cshtml",
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\Pages\\_Host.cshtml",
       "TargetPath": "Pages\\_Host.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\_Imports.razor",
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\Pages\\Index.razor",
+      "TargetPath": "Pages\\Index.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
     },
     {
-      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Shared\\MainLayout.razor",
-      "TargetPath": "Shared\\MainLayout.razor",
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\Pages\\AddEvent.razor",
+      "TargetPath": "Pages\\AddEvent.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\App.razor",
-      "TargetPath": "App.razor",
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\Pages\\EventList.razor",
+      "TargetPath": "Pages\\EventList.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Shared\\NavMenu.razor",
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\Shared\\NavMenu.razor",
       "TargetPath": "Shared\\NavMenu.razor",
       "FileKind": "component"
     },
     {
-      "FilePath": "c:\\Users\\javic\\Documents\\GitHub\\OnlineCalendarSystem-Tier1\\Pages\\Error.cshtml",
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\Shared\\MainLayout.razor",
+      "TargetPath": "Shared\\MainLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\App.razor",
+      "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\Pages\\Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\Shared\\LoginLayout.razor",
+      "TargetPath": "Shared\\LoginLayout.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\Shared\\SurveyPrompt.razor",
+      "TargetPath": "Shared\\SurveyPrompt.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\Pages\\Login.razor",
+      "TargetPath": "Pages\\Login.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\Pages\\Calendar.razor",
+      "TargetPath": "Pages\\Calendar.razor",
+      "FileKind": "component"
     }
   ],
   "SerializationFormat": "0.2"

@@ -27,4 +27,13 @@
     public Date EventDay { get; set; }
     
     private Event _event = new Event();
+
+    protected override void OnInitialized()
+        {
+           AddEvent.OnEventAdded += ()=>{
+               StateHasChanged();
+           };
+        }
 }
+
+      

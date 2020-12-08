@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1Wz2caaw9V7E/Q2dor3Cx3F9ZHauJ4uAqi3/hXXxqTqfiEk+2VtS9yK0TwcMAkMXPi3s1O2SvKQcNcRqt8asyA==",
+  "dgSpecHash": "mxUT3XVO6iyHUPdGWB2fefnfCE9UnDCdy686k8v2RMy5oENJ9yvR8yDjWzvfXk68NzJy6dpLHh5nUnR7yTXviA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\javic\\RiderProjects\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj",
+  "projectFilePath": "C:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\javic\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\javic\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

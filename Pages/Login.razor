@@ -66,6 +66,7 @@
         try
         {
             ((Authentication)AuthenticationStateProvider).validateLogin(username, password);
+            await OnlineCalendarService.login(username,password);
             username = "";
             password = "";
             NavigationManager.NavigateTo("/calendar");

@@ -5285,11 +5285,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\javic\\RiderProjects\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj",
+      "projectUniqueName": "C:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj",
       "projectName": "OnlineCalendarSystem Tier1",
-      "projectPath": "C:\\Users\\javic\\RiderProjects\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj",
+      "projectPath": "C:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem Tier1.csproj",
       "packagesPath": "C:\\Users\\javic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\javic\\RiderProjects\\OnlineCalendarSystem-Tier1\\obj\\",
+      "outputPath": "C:\\Users\\javic\\source\\repos\\OnlineCalendarSystem-Tier1\\OnlineCalendarSystem-Tier1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\javic\\AppData\\Roaming\\NuGet\\NuGet.Config",

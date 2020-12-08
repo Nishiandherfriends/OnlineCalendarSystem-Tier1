@@ -41,5 +41,7 @@
         
         Console.WriteLine($"Total Events in Day {EventDay.Events.Count} | {_event.description} | {_event.startDate} | {_event.endDate}");
         _event = new Event();
+         OnlineCalendarService.createEvent(1,_event);
     }
+    public static event Action OnEventAdded = () =>{ };
 }
