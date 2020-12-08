@@ -147,13 +147,13 @@
                          {
                              var eventpop = day.Events.FirstOrDefault();
                              <div class="day-event @eventpop.Color">
-                                 @if (eventpop.description.Length > 30)
+                                 @if (eventpop.title.Length > 30)
                                  {
-                                     @eventpop.description.Substring(0, 30);
+                                     @eventpop.title.Substring(0, 30);
                                  }
                                  else
                                  {
-                                     @eventpop.description
+                                     @eventpop.title
                                  }
                              </div>
                          }

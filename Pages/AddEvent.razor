@@ -8,9 +8,11 @@
      
      <div class="card-div">
          <h3 class="ms-fontsize-25 ms-fontweight-regular">@EventDay.DateTime.ToString("D")</h3>
-         <input type="text" @bind-value="_event.description" class="fl-input" placeholder="Event">
-         <input type="time" @bind-value="_event.startDate" class="fl-input" placeholder="Event">
-         <input type="time" @bind-value="_event.endDate" class="fl-input" placeholder="Event">
+         <input type="text" @bind-value="_event.title" class="fl-input" placeholder="Event">
+         <input type="text" @bind-value="_event.description" class="fl-input" placeholder="Description">
+         <input type="text" @bind-value="_event.location" class="fl-input" placeholder="Location">
+         <input type="time" @bind-value="_event.startDate" class="fl-input" placeholder="">
+         <input type="time" @bind-value="_event.endDate" class="fl-input" placeholder="">
      </div>
       </EditForm>
  </div>
@@ -29,7 +31,9 @@
         }
         var calendarEvent = new Event
         {
+            title = _event.title,
             description = _event.description,
+            location =_event.location,
             startDate = _event.startDate,
             endDate = _event.endDate
         };
