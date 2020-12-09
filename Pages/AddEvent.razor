@@ -19,8 +19,16 @@
 @code {
     [Parameter]
     public Date EventDay { get; set; }
-    private Event _event = new Event();
+    private static Event _event = new Event();
 
+    private Event calendarEvent = new Event
+    {
+        title = _event.title,
+        description = _event.description,
+        location = _event.location,
+        startDate = _event.startDate,
+        endDate = _event.endDate
+    };
     private void addEventToSelectedDay()
     {
         _event.startDate = new DateTime(EventDay.DateTime.Year, EventDay.DateTime.Date.Month, EventDay.DateTime.Day, _event.startDate.Hour, _event.startDate.Minute, 0);
@@ -40,8 +48,13 @@
         EventDay.Events.Add(calendarEvent);
         
         Console.WriteLine($"Total Events in Day {EventDay.Events.Count} | {_event.description} | {_event.startDate} | {_event.endDate}");
-        _event = new Event();
-         OnlineCalendarService.createEvent(1,_event);
+        
+         OnlineCalendarService.createEvent(1,calendarEvent);
     }
     public static event Action OnEventAdded = () =>{ };
+
+    public void removeEvent()
+    {
+        EventDay.Events.Remove(_event);
+    }
 }

@@ -33,6 +33,7 @@
         <e p="Debug" t="Include">
           <e p="netcoreapp3.1" t="Include">
             <e p="OnlineCalendarSystem Tier1.AssemblyInfo.cs" t="Include" />
+            <e p="OnlineCalendarSystem Tier1.RazorAssemblyInfo.cs" t="Include" />
           </e>
         </e>
       </e>
@@ -42,6 +43,7 @@
         <e p="_Host.cshtml" t="Include" />
         <e p="AddEvent.razor" t="Include" />
         <e p="Calendar.razor" t="Include" />
+        <e p="DeleteEvent.razor" t="Include" />
         <e p="Error.cshtml" t="Include" />
         <e p="EventList.razor" t="Include" />
         <e p="Index.razor" t="Include" />

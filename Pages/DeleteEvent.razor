@@ -1,0 +1,20 @@
+﻿ @inject OnlineCalendarService OnlineCalendarService
+
+ <div class="ms-depth-10 card">
+     <EditForm model="_event" OnValidSubmit="removeEvent">
+         <div class="calendar-toolbar">
+             <button class="toolbar-button" type="submit"><i class="ms-Icon ms-Icon--AddEvent"></i> RemoveEvent</button>
+         </div>
+     </EditForm>
+ </div>
+@code {
+    [Parameter]
+    public Date EventDay { get; set; }
+    private Event _event = new Event();
+
+    private void removeEvent()
+    {
+        EventDay.Events.Remove(_event);
+    }
+
+}

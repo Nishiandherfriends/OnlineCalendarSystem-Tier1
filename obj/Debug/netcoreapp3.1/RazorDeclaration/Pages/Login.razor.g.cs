@@ -134,14 +134,14 @@ using OnlineCalendarSystem_Tier1.Data;
     {
         isBusy = true;
         errorMessage = "";
-        var result = await OnlineCalendarService.login(user.username, user.password);
-        if (result.Equals(user))
-        {
+       // var result = await OnlineCalendarService.login(user.username, user.password);
+       // if (result.Equals(user))
+        //{
             await ((Authentication)AuthenticationStateProvider).validateLogin(user.username, user.password);
             await AuthenticationStateProvider.GetAuthenticationStateAsync();
             NavigationManager.NavigateTo("/");
-        }
-        isBusy = false;
+      //  }
+      //  isBusy = false;
     }
 
     public void GoToRegister()

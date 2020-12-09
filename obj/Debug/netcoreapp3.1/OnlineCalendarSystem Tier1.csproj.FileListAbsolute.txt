@@ -243,3 +243,5 @@ C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier
 C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\RedirectToLogin.razor.g.cs
 C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\RegisterUser.razor.g.cs
 C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\Razor\Shared\AuthLayout.razor.g.cs
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\DeleteEvent.razor.g.cs
+C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\DeleteEvent.razor.g.cs
