@@ -26,10 +26,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a54fb85-fb21-4235-8e47-f090825b76ae" name="Default Changelist" comment="More work">
-      <change afterPath="$PROJECT_DIR$/Pages/DeleteEvent.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineCalendarSystem Tier1.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineCalendarSystem Tier1.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OnlineCalendarSystem Tier1.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OnlineCalendarSystem Tier1.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/Authentication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Login/Authentication.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/AddEvent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/AddEvent.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/OnlineCalendarSystem Tier1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Razor/Pages/AddEvent.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/Razor/Pages/AddEvent.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/RazorDeclaration/OnlineCalendarSystem Tier1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/RazorDeclaration/OnlineCalendarSystem Tier1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/RazorDeclaration/OnlineCalendarSystem Tier1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/RazorDeclaration/OnlineCalendarSystem Tier1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddEvent.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddEvent.razor.g.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,18 +78,18 @@
         <option value="$PROJECT_DIR$/Data/OnlineCalendarService.cs" />
         <option value="$PROJECT_DIR$/_Imports.razor" />
         <option value="$PROJECT_DIR$/wwwroot/index.html" />
-        <option value="$PROJECT_DIR$/Pages/Index.razor" />
         <option value="$PROJECT_DIR$/Shared/NavMenu.razor" />
         <option value="$PROJECT_DIR$/App.razor" />
-        <option value="$PROJECT_DIR$/Pages/Login.razor" />
         <option value="$PROJECT_DIR$/Pages/RedirectToLogin.razor" />
         <option value="$PROJECT_DIR$/Login/UserService.cs" />
         <option value="$PROJECT_DIR$/Login/IUser.cs" />
         <option value="$PROJECT_DIR$/Models/User.cs" />
         <option value="$PROJECT_DIR$/Pages/RegisterUser.razor" />
         <option value="$PROJECT_DIR$/users.json" />
-        <option value="$PROJECT_DIR$/Login/Authentication.cs" />
         <option value="$PROJECT_DIR$/Pages/DeleteEvent.razor" />
+        <option value="$PROJECT_DIR$/Pages/Login.razor" />
+        <option value="$PROJECT_DIR$/Pages/Index.razor" />
+        <option value="$PROJECT_DIR$/Login/Authentication.cs" />
         <option value="$PROJECT_DIR$/Pages/AddEvent.razor" />
       </list>
     </option>
@@ -169,7 +180,7 @@
       <workItem from="1607363130403" duration="7949000" />
       <workItem from="1607443924595" duration="5163000" />
       <workItem from="1607450404679" duration="2518000" />
-      <workItem from="1607531919832" duration="633000" />
+      <workItem from="1607531919832" duration="1226000" />
     </task>
     <task id="LOCAL-00001" summary="New calendar design">
       <created>1607257633246</created>

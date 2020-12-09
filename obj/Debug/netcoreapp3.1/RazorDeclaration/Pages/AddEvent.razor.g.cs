@@ -138,7 +138,7 @@ using Radzen.Blazor;
         
         Console.WriteLine($"Total Events in Day {EventDay.Events.Count} | {_event.description} | {_event.startDate} | {_event.endDate}");
         
-         OnlineCalendarService.createEvent(1,calendarEvent);
+      //   OnlineCalendarService.createEvent(1,calendarEvent);
     }
     public static event Action OnEventAdded = () =>{ };
 
