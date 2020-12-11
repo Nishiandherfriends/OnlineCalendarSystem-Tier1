@@ -52,6 +52,7 @@ namespace OnlineCalendarSystem_Tier1.Data
                 }
                 else
                 {
+                    return "Something failed";
                     throw new Exception(response.ReasonPhrase);
                 }
             }
@@ -175,6 +176,7 @@ namespace OnlineCalendarSystem_Tier1.Data
             {
                 if (response.IsSuccessStatusCode)
                 {
+
                     return await response.Content.ReadAsAsync<string>();
                 }
                 else
