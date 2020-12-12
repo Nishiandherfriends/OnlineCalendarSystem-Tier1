@@ -42,7 +42,7 @@ namespace OnlineCalendarSystem_Tier1.Data
         /// <param name="username">The new username of the user.</param>
         /// <param name="password">The new password of the user.</param>
         /// <returns>A string with a success or error message.</returns>
-        public async Task<string> createUser(string username, string password)
+        public static async Task<string> createUser(string username, string password)
         {
             using (HttpResponseMessage response = await ApiHelper.GetApiClient().PostAsJsonAsync("/user?username=" + username + "&password=" + password, ""))
             {
@@ -64,7 +64,7 @@ namespace OnlineCalendarSystem_Tier1.Data
         /// <param name="password">The new/old password depending on the wishes of the user.</param>
         /// <param name="id">The id of the user that is changing its details.</param>
         /// <returns>A string with a success or error message.</returns>
-        public static async Task<string> updateUser(string username, string password, int id) 
+        public async Task<string> updateUser(string username, string password, int id) 
         {
             using (HttpResponseMessage response = await ApiHelper.GetApiClient().PutAsJsonAsync("/user?username=" + username + "&password=" + password + "&id=" + id, ""))
             {
@@ -84,7 +84,7 @@ namespace OnlineCalendarSystem_Tier1.Data
         /// </summary> 
         /// <param name="userID">The id of the user that is going to be deleted.</param>
         /// <returns>A string with a success or error message.</returns>
-        public static async Task<string> deleteUser(int userID)
+        public async Task<string> deleteUser(int userID)
         {
             using (HttpResponseMessage response = await ApiHelper.GetApiClient().DeleteAsync("/user?userID=" + userID))
             {

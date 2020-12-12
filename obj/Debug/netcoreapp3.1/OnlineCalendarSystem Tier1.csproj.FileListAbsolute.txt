@@ -1,11 +1,13 @@
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.exe
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.csprojAssemblyReference.cache
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.AssemblyInfoInputs.cache
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.AssemblyInfo.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.RazorComponent.input.cache
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Login.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -97,6 +99,7 @@ C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\OnlineCalendarSystem Tier1.dll
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\Login.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Shared\LoginLayout.razor.g.cs
@@ -242,24 +245,3 @@ C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier
 C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\Razor\Shared\AuthLayout.razor.g.cs
 C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\DeleteEvent.razor.g.cs
 C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\DeleteEvent.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.StaticWebAssets.xml
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\AKSoftware.WebApi.dll
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\Radzen.Blazor.dll
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\System.Linq.Dynamic.Core.dll
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddEvent.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Calendar.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\DeleteEvent.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\EventList.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\RedirectToLogin.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\RegisterUser.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\AuthLayout.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\AddEvent.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\Calendar.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\DeleteEvent.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\EventList.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\RedirectToLogin.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\RegisterUser.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Shared\AuthLayout.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\scopedcss\bundle\OnlineCalendarSystem Tier1.styles.css
