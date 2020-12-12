@@ -11,7 +11,7 @@ namespace OnlineCalendarSystem_Tier1.Data
     /// </summary>
     public sealed class ApiHelper
     {
-        private static HttpClient ApiClient = null;
+        private static HttpClient ApiClient;
 
         /// <summary>
         /// This method initialises the HTTP client if it has not been initialised before and returns it.
