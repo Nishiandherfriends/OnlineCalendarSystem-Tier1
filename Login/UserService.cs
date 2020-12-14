@@ -17,7 +17,7 @@ namespace OnlineCalendarSystem_Tier1.Login
 
         public UserService(){
             string content = File.ReadAllText(userFile);
-            users = JsonSerializer.Deserialize<List<User>>(content);
+            //users = JsonSerializer.Deserialize<List<User>>(content);
         }
         private void writeUserToFile(List<User> user){
             string userAsJson = JsonSerializer.Serialize(user);
