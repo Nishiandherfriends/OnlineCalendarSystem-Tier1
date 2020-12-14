@@ -5,6 +5,9 @@
          <div class="calendar-toolbar">
              <button class="toolbar-button" type="submit"><i class="ms-Icon ms-Icon--AddEvent"></i> RemoveEvent</button>
          </div>
+         <div class="card-div">
+             <input type="text" @bind-value="_event.id" class="fl-input" placeholder="Event">
+         </div>
      </EditForm>
  </div>
 @code {
@@ -14,7 +17,7 @@
 
     private void removeEvent()
     {
-        EventDay.Events.Remove(_event);
+       OnlineCalendarService.deleteEvent(_event.id);
     }
 
 }

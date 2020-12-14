@@ -7,6 +7,7 @@
     <e p="C:\Users\javic\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
     <e p="C:\Users\javic\source\repos\OnlineCalendarSystem-Tier1\OnlineCalendarSystem-Tier1" t="IncludeRecursive">
       <e p=".gitattributes" t="Include" />
+      <e p=".gitignore" t="Include" />
       <e p="_Imports.razor" t="Include" />
       <e p="App.razor" t="Include" />
       <e p="appsettings.Development.json" t="Include" />

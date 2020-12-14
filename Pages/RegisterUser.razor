@@ -1,6 +1,5 @@
 ﻿@page "/register"
 @layout AuthLayout
-@using OnlineCalendarSystem_Tier1.login
 @using OnlineCalendarSystem_Tier1.Login
 @inject IUser userService
 @inject NavigationManager NavigationManager
@@ -41,6 +40,7 @@
         flag = true;
         userService.AddUser(user.username, user.password);
         flag = false;
+       await OnlineCalendarService.createUser(user.username, user.password);
     }
 
     public void GoToLogin()

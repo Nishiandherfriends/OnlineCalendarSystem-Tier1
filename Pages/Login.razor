@@ -1,9 +1,6 @@
-@layout LoginLayout
+@layout AuthLayout
 @page "/login"
 @using OnlineCalendarSystem_Tier1.Login
-@using OnlineCalendarSystem_Tier1.Models
-@using login
-@using OnlineCalendarSystem_Tier1.Data
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
 @inject IUser UserService
@@ -13,8 +10,8 @@
         <h2>Login to your account</h2>
         <EditForm Model="user" OnValidSubmit="PerformLogin">
             <RadzenCard>
-                <DataAnnotationsValidator />
-                <ValidationSummary />
+                <DataAnnotationsValidator/>
+                <ValidationSummary/>
 
                 <label>Username</label>
                 <RadzenTextBox @bind-Value="user.username"></RadzenTextBox>
@@ -22,13 +19,13 @@
                 <label>Password</label>
                 <RadzenPassword @bind-Value="user.password"></RadzenPassword>
 
-                <hr />
+                <hr/>
                 <RadzenButton ButtonType="Radzen.ButtonType.Submit" Text="Login"
                               ButtonStyle="Radzen.ButtonStyle.Primary" class="btn-block mr-2"
-                              Disabled="isBusy" />
+                              Disabled="isBusy"/>
                 <RadzenButton ButtonType="Radzen.ButtonType.Button" Text="Register"
                               ButtonStyle="Radzen.ButtonStyle.Secondary" class="btn-block mr-2"
-                              Disabled="isBusy" Click="GoToRegister" />
+                              Disabled="isBusy" Click="GoToRegister"/>
             </RadzenCard>
         </EditForm>
     </div>
@@ -50,14 +47,9 @@
     {
         isBusy = true;
         errorMessage = "";
-       // var result = await OnlineCalendarService.login(user.username, user.password);
-       // if (result.Equals(user))
-        //{
-            await ((Authentication)AuthenticationStateProvider).validateLogin(user.username, user.password);
-            await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            NavigationManager.NavigateTo("/");
-      //  }
-      //  isBusy = false;
+        await  OnlineCalendarService.login(user.username, user.password);
+        NavigationManager.NavigateTo("/");
+        isBusy = false;
     }
 
     public void GoToRegister()
