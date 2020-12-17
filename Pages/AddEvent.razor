@@ -1,56 +1,37 @@
-﻿ @inject OnlineCalendarService OnlineCalendarService
+﻿@inject OnlineCalendarService OnlineCalendarService
+
 
  <div class="ms-depth-18 card">
-     <EditForm model="_event" OnValidSubmit="addEventToSelectedDay">
+     <EditForm model="_event" OnValidSubmit="createEvent">
      <div class="calendar-toolbar">
          <button class="toolbar-button" type="submit"><i class="ms-Icon ms-Icon--AddEvent"></i> Add Event</button>
      </div>
      
      <div class="card-div">
          <h3 class="ms-fontsize-25 ms-fontweight-regular">@EventDay.DateTime.ToString("D")</h3>
-         <input type="text" @bind-value="_event.title" class="fl-input" placeholder="Event">
-         <input type="text" @bind-value="_event.description" class="fl-input" placeholder="Description">
-         <input type="text" @bind-value="_event.location" class="fl-input" placeholder="Location">
-         <input type="time" @bind-value="_event.startDate" class="fl-input" placeholder="">
-         <input type="time" @bind-value="_event.endDate" class="fl-input" placeholder="">
+         <input type="text" @bind-value="evt.title" class="fl-input" placeholder="Event">
+         <input type="text" @bind-value="evt.description" class="fl-input" placeholder="Description">
+         <input type="text" @bind-value="evt.location" class="fl-input" placeholder="Location">
+         <input type="time" @bind-value="sDate" class="fl-input" placeholder="">
+         <input type="time" @bind-value="eDate" class="fl-input" placeholder="">
      </div>
       </EditForm>
  </div>
 @code {
+    private Event evt;
+    private string title, description, location;
+    private DateTime sDate, eDate;
     [Parameter]
-    public Date EventDay { get; set; }
-    private static Event _event = new Event();
+    public Date eventDay { get; set; }
 
-    private Event calendarEvent = new Event
+
+    private async void createEvent()
     {
-        title = _event.title,
-        description = _event.description,
-        location = _event.location,
-        startDate = _event.startDate,
-        endDate = _event.endDate
-    };
-    private void addEventToSelectedDay()
-    {
-        _event.startDate = new DateTime(EventDay.DateTime.Year, EventDay.DateTime.Date.Month, EventDay.DateTime.Day, _event.startDate.Hour, _event.startDate.Minute, 0);
-        _event.endDate = new DateTime(EventDay.DateTime.Year, EventDay.DateTime.Date.Month, EventDay.DateTime.Day, _event.endDate.Hour, _event.endDate.Minute, 0);
-        if (EventDay.Events == null)
-        {
-            EventDay.Events = new List<Event>();
-        }
-        var calendarEvent = new Event
-        {
-            title = _event.title,
-            description = _event.description,
-            location =_event.location,
-            startDate = _event.startDate,
-            endDate = _event.endDate
-        };
-        EventDay.Events.Add(calendarEvent);
-        
-        Console.WriteLine($"Total Events in Day {EventDay.Events.Count} | {_event.description} | {_event.startDate} | {_event.endDate}");
-        
-        OnlineCalendarService.createEvent(1,calendarEvent);
+        Date startDate = new Date(eventDay.year, eventDay.month, eventDay.day, sDate.Hour, sDate.Minute, sDate.Second);
+        Date endDate = new Date(eventDay.year, eventDay.month, eventDay.day, eDate.Hour, eDate.Minute, eDate.Second);
+
+        evt = new Event(1, title, description, location, startDate, endDate);
+
+        await OnlineCalendarService.createEvent(UserService.GetUser().ID, evt);
     }
-    public static event Action OnEventAdded = () =>{ };
-    
 }

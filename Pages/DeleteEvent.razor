@@ -13,11 +13,11 @@
 @code {
     [Parameter]
     public Date EventDay { get; set; }
-    private Event _event = new Event();
+    private Event evt;
 
-    private void removeEvent()
+    private async void removeEvent()
     {
-       OnlineCalendarService.deleteEvent(_event.id);
+       await OnlineCalendarService.deleteEvent(evt.id);
     }
 
 }

@@ -1,7 +1,6 @@
 ﻿@page "/register"
 @layout AuthLayout
 @using OnlineCalendarSystem_Tier1.Login
-@inject IUser userService
 @inject NavigationManager NavigationManager
 
 <div class="row">
@@ -32,6 +31,7 @@
 
 @code {
     private string username, password, message;
+
     public async void Register()
     {
         message = await OnlineCalendarService.createUser(username, password).Result;

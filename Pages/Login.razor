@@ -3,7 +3,6 @@
 @using OnlineCalendarSystem_Tier1.Login
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
-@inject IUser UserService
 @inject OnlineCalendarService OnlineCalendarService
 <div class="row">
     <div class="col-12">
@@ -35,8 +34,6 @@
 
 
 @code{
-    private User user;
-    OnlineCalendarService service = new OnlineCalendarService;
     private string username, password;
     private string errorMessage;
 
@@ -47,8 +44,8 @@
 
     public async void PerformLogin()
     {
-        User user = await service.login(username, password).Result;
-        if (user != null)
+        UserService.SetUser((User) await OnlineCalendarService.login(username, password).Result);
+        if (UserService.GetUser() != null)
         {
             NavigationManager.NavigateTo("/");
         }

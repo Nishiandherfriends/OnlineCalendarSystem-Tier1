@@ -115,21 +115,23 @@ using OnlineCalendarSystem_Tier1.Login;
 #nullable restore
 #line 37 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Login.razor"
       
-    private User user = new User();
+    private User user;
+    OnlineCalendarService service = new OnlineCalendarService;
+    private string username, password;
     private string errorMessage;
-    public bool isBusy { get; set; }
+
     protected override Task OnInitializedAsync()
     {
-        user = new User();
         return base.OnInitializedAsync();
     }
-    public async Task PerformLogin()
+
+    public async void PerformLogin()
     {
-        isBusy = true;
-        errorMessage = "";
-        await  OnlineCalendarService.login(user.username, user.password);
-        NavigationManager.NavigateTo("/");
-        isBusy = false;
+        User user = await service.login(username, password).Result;
+        if (user != null)
+        {
+            NavigationManager.NavigateTo("/");
+        }
     }
 
     public void GoToRegister()

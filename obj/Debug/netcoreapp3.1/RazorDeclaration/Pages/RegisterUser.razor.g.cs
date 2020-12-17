@@ -115,16 +115,14 @@ using OnlineCalendarSystem_Tier1.Login;
 #nullable restore
 #line 33 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\RegisterUser.razor"
        
-    User user =new User();
-    bool flag= false;
-     
-    public bool isSuccess { get; set; }
-    public async Task Register()
+    private string username, password, message;
+    public async void Register()
     {
-        flag = true;
-        userService.AddUser(user.username, user.password);
-        flag = false;
-       await OnlineCalendarService.createUser(user.username, user.password);
+        message = await OnlineCalendarService.createUser(username, password).Result;
+        if (message.Equals("User created!"))
+        {
+            GoToLogin();
+        }
     }
 
     public void GoToLogin()
