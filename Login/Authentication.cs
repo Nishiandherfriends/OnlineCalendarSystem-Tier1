@@ -50,7 +50,7 @@ namespace OnlineCalendarSystem_Tier1.login
         private ClaimsIdentity SetupClaimsForUser(User user)
         {
             List<Claim> claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Name, user.username));
+            claims.Add(new Claim(ClaimTypes.Name, user.username)); // Need to do the login first
             claims.Add(new Claim("securityLevel", user.securityLevel));
             ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth_type");
             return identity;

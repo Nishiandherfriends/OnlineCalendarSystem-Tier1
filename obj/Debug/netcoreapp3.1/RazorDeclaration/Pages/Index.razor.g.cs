@@ -114,7 +114,20 @@ using OnlineCalendarSystem_Tier1.Models;
 #nullable restore
 #line 195 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Index.razor"
       
+    private List<Event> events; // I'll take this out later
     private DateTime selectedDay = new DateTime();
+
+    public Date DateTimeToDate(DateTime dateTime)
+    {
+        return new Date(dateTime.Year, dateTime.Month, dateTime.Day,
+            dateTime.Hour, dateTime.Minute, dateTime.Second);
+    }
+
+    public DateTime DateToDateTime(Date date)
+    {
+        return new DateTime(date.year, date.month, date.day,
+            date.hour, date.minute, date.second);
+    }
 
 #line default
 #line hidden

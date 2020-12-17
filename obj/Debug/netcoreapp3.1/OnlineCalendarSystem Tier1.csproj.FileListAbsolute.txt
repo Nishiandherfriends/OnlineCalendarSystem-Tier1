@@ -250,14 +250,12 @@ C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Calendar.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\DeleteEvent.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\EventList.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\RedirectToLogin.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\RegisterUser.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\AuthLayout.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\AddEvent.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\Calendar.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\DeleteEvent.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\EventList.razor.g.cs
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\RedirectToLogin.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Pages\RegisterUser.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\Razor\Shared\AuthLayout.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\scopedcss\bundle\OnlineCalendarSystem Tier1.styles.css
