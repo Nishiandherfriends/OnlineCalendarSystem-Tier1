@@ -31,10 +31,10 @@
     public Date EventDay { get; set; }
     private List<Event> events;
 
-    protected override void OnInitialized()
-    {
-        events = await OnlineCalendarService.getEvents(UserService.GetUser().id);
-        //AddEvent.OnEventAdded += () => {StateHasChanged();};
+    public async void GetEvents() 
+    { 
+        events = new List<Event>();
+        events = await OnlineCalendarService.getEvents(UserService.GetUser().id); 
     }
 }
 

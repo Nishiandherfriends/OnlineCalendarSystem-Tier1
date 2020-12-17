@@ -33,11 +33,11 @@ namespace OnlineCalendarSystem_Tier1
             services.AddServerSideBlazor();
             services.AddSingleton<OnlineCalendarService>();
             services.AddScoped<AuthenticationStateProvider, Authentication>();
-            services.AddScoped<IUser, UserService>();
+            services.AddScoped<UserService>();
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("MustBeAdmin", a => a.RequireAuthenticatedUser().RequireClaim("securityLevel", "2"));
-                options.AddPolicy("MustBeUser", a => a.RequireAuthenticatedUser().RequireClaim("securityLevel", "1", "2"));
+                options.AddPolicy("MustBeAdmin", a => a.RequireAuthenticatedUser().RequireClaim("securityLevel", "2", "3"));
+                options.AddPolicy("MustBeUser", a => a.RequireAuthenticatedUser().RequireClaim("securityLevel", "1", "2", "3"));
             });
         }
 

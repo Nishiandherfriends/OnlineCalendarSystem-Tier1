@@ -16,10 +16,9 @@ namespace OnlineCalendarSystem_Tier1.login
         private readonly IUser userService;
         private User cachedUser;
         
-        public Authentication(IJSRuntime jsRuntime, IUser userService)
+        public Authentication(IJSRuntime jsRuntime)
         {
             this.jsRuntime = jsRuntime;
-            this.userService = userService;
         }
 
 
@@ -64,12 +63,6 @@ namespace OnlineCalendarSystem_Tier1.login
             }
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(new ClaimsPrincipal(identity))));
         }
-
-        public async Task RegisterUser(string username, string password)
-        {
-           //  var result = OnlineCalendarService.createUser(username, password);
-            
-        }
         
         public void LogOut()
         {
@@ -85,7 +78,7 @@ namespace OnlineCalendarSystem_Tier1.login
             claims.Add(new Claim(ClaimTypes.Name, user.username));
             claims.Add(new Claim("securityLevel", user.securityLevel));
             ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth_type");
-           return identity;
+            return identity;
         }
     }
 }
