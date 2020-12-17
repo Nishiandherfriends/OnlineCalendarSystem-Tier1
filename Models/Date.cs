@@ -26,9 +26,8 @@ namespace OnlineCalendarSystem_Tier1.Models
         [NotNull, Range(0, 59)]
         public int second { get; set; }
         
-        //public List<Event> Events { get; set; }
-        //public bool isEmpty { get; set; }
-        //public DateTime DateTime { get; set; }
+        public Date() {}
+
         public Date(int year, int month, int day, int hour, int minute, int second) 
         {
             this.year = year;

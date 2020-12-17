@@ -13,7 +13,6 @@ namespace OnlineCalendarSystem_Tier1.login
     public class Authentication : AuthenticationStateProvider
     {
         private readonly IJSRuntime jsRuntime;
-        private readonly IUser userService;
         private User cachedUser;
         
         public Authentication(IJSRuntime jsRuntime)
@@ -24,43 +23,19 @@ namespace OnlineCalendarSystem_Tier1.login
 
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
-            var identity = new ClaimsIdentity();
-            if (cachedUser == null)
-            {
-                string userasJson = await jsRuntime.InvokeAsync<string>("sessionStorage.getItem", "currentUser");
-                if (!string.IsNullOrEmpty(userasJson))
-                {
-                    cachedUser = JsonSerializer.Deserialize<User>(userasJson);
-                    identity = SetupClaimsForUser(cachedUser);
-                }
-            }
-            else
-            {
-                identity = SetupClaimsForUser(cachedUser);
-            }
-
+            ClaimsIdentity identity = new ClaimsIdentity();
+            identity = SetupClaimsForUser(cachedUser);
             ClaimsPrincipal cashedClaimsPrincipal = new ClaimsPrincipal(identity);
             return await Task.FromResult(new AuthenticationState(cashedClaimsPrincipal));
         }
 
-        public async Task validateLogin(string username, string password)
+        public async Task validateLogin(User user)
         {
-            Console.Write("Valid login");
-            if (string.IsNullOrEmpty(username)) throw new Exception("Enter username");
-            if (string.IsNullOrEmpty(password)) throw new Exception("Enter password");
             ClaimsIdentity identity = new ClaimsIdentity();
-            try
-            {
-                User user =  await userService.ValidateUser(username, password);
-                identity = SetupClaimsForUser(user);
-                string serializedData = JsonSerializer.Serialize(user);
-                await jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serializedData);
-                cachedUser = user;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            identity = SetupClaimsForUser(user);
+            string serializedData = JsonSerializer.Serialize(user);
+            await jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serializedData);
+            cachedUser = user;
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(new ClaimsPrincipal(identity))));
         }
         

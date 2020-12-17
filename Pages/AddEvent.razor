@@ -10,7 +10,7 @@
         </div>
 
         <div class="card-div">
-            <h3 class="ms-fontsize-25 ms-fontweight-regular">@EventDay.DateTime.ToString("D")</h3>
+            <h3 class="ms-fontsize-25 ms-fontweight-regular">@DateTime.Now.ToString("D")</h3>
             <input type="text" @bind-value="evt.title" class="fl-input" placeholder="Event">
             <input type="text" @bind-value="evt.description" class="fl-input" placeholder="Description">
             <input type="text" @bind-value="evt.location" class="fl-input" placeholder="Location">

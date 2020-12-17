@@ -19,6 +19,6 @@
 
     private async void removeEvent()
     {
-        await OnlineCalendarService.deleteEvent(evt.id);
+        string message = (string) await OnlineCalendarService.deleteEvent(evt.id);
     }
 }

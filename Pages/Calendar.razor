@@ -240,22 +240,13 @@
         //Add empty days
         for (int i = 0; i < numberOfEmptyDays; i++)
         {
-            dates.Add(new Date
-            {
-                day = 0,
-                isEmpty = true
-            });
+            dates.Add(new Date());
         }
         //Add month days
         int numberOfDaysInMonth = DateTime.DaysInMonth(year, month);
         for (int i = 0; i < numberOfDaysInMonth; i++)
         {
-            dates.Add(new Date
-            {
-                day = i + 1,
-                isEmpty = false,
-                DateTime = new DateTime(year, month, i + 1)
-            });
+            dates.Add(new Date());
         }
         //number of rows
         int count = dates.Count % 7;
@@ -264,9 +255,8 @@
             rows = dates.Count / 7;
         }
         else
-        {
+        { 
             rows = Convert.ToInt32(dates.Count / 7) + 1;
-
         }
         Console.WriteLine($"Total Rows: {rows} | Number of Empty Days {numberOfEmptyDays} | Month Days {numberOfDaysInMonth}");
     }

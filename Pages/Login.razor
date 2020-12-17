@@ -46,7 +46,7 @@
 
     public async void PerformLogin()
     {
-        UserService.SetUser((User)await OnlineCalendarService.login(username, password).Result);
+        UserService.SetUser((User) await OnlineCalendarService.login(username, password));
         if (UserService.GetUser() != null)
         {
             NavigationManager.NavigateTo("/");

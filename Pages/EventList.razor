@@ -34,7 +34,7 @@
     public async void GetEvents() 
     { 
         events = new List<Event>();
-        events = await OnlineCalendarService.getEvents(UserService.GetUser().id); 
+        events = (List<Event>) await OnlineCalendarService.getEvents(UserService.GetUser().id); 
     }
 }
 

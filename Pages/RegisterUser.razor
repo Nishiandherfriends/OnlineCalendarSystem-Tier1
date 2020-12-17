@@ -36,7 +36,7 @@
 
     public async void Register()
     {
-        message = await OnlineCalendarService.createUser(username, password).Result;
+        message = (string) await OnlineCalendarService.createUser(username, password);
         if (message.Equals("User created!"))
         {
             GoToLogin();
