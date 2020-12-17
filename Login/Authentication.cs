@@ -13,7 +13,6 @@ namespace OnlineCalendarSystem_Tier1.login
     public class Authentication : AuthenticationStateProvider
     {
         private readonly IJSRuntime jsRuntime;
-        private User cachedUser;
         
         public Authentication(IJSRuntime jsRuntime)
         {
@@ -24,7 +23,7 @@ namespace OnlineCalendarSystem_Tier1.login
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
             ClaimsIdentity identity = new ClaimsIdentity();
-            identity = SetupClaimsForUser(cachedUser);
+            identity = SetupClaimsForUser(UserService.GetUser());
             ClaimsPrincipal cashedClaimsPrincipal = new ClaimsPrincipal(identity);
             return await Task.FromResult(new AuthenticationState(cashedClaimsPrincipal));
         }
@@ -35,13 +34,13 @@ namespace OnlineCalendarSystem_Tier1.login
             identity = SetupClaimsForUser(user);
             string serializedData = JsonSerializer.Serialize(user);
             await jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", serializedData);
-            cachedUser = user;
+            UserService.SetUser(user);
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(new ClaimsPrincipal(identity))));
         }
         
         public void LogOut()
         {
-            cachedUser = null;
+            UserService.SetUser(null);
             var user = new ClaimsPrincipal(new ClaimsIdentity());
             jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "currentUser", "");
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(user)));

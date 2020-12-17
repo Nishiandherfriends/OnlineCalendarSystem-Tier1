@@ -3,9 +3,9 @@
 @using OnlineCalendarSystem_Tier1.Models
 
 <div class="ms-depth-10 card">
-    <EditForm model="_event" OnValidSubmit="removeEvent">
+    <EditForm model="evt" OnValidSubmit="removeEvent">
         <div class="calendar-toolbar">
-            <button class="toolbar-button" type="submit"><i class="ms-Icon ms-Icon--AddEvent"></i> RemoveEvent</button>
+            <button class="toolbar-button" type="submit"><i class="ms-Icon ms-Icon--AddEvent"></i>RemoveEvent</button>
         </div>
         <div class="card-div">
             <input type="text" @bind-value="evt.id" class="fl-input" placeholder="Event">
