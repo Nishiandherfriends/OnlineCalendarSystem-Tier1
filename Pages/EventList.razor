@@ -4,19 +4,19 @@
 
 <div class="ms-depth-16 card">
     <div class="card-div">
-        <h3 class="ms-fontSize-20 ms-fontWeight-regular">@EventDay.DateTime.ToString("D")</h3>
+        <h3 class="ms-fontSize-20 ms-fontWeight-regular">@EventDay.ToString()</h3>
         @{
-            if (EventDay.Events == null || EventDay.Events.Count == 0)
+            if (events == null || events.Count == 0)
             {
                 <h3 class="ms-fontSize-15 ms-fontWeight-regular">No events in this day </h3>
             }
             else
             {
-                foreach (var item in EventDay.Events)
+                foreach (var item in events)
                 {
-                    string color = item.Color;
+                    string color = "blue";
                     <div class="event shadow @color">
-                        <h3 class="ms-fontSize-15 ms-fontWeight-regular">@item.startDate.ToString("HH:mm") to @item.endDate.ToString("HH:mm")</h3>
+                        <h3 class="ms-fontSize-15 ms-fontWeight-regular">@item.startDate.HourToString() to @item.endDate.HourToString()</h3>
                         <p class="ms-fontSize-10 ms-fontWeight-regular">@item.title</p>
                         <p class="ms-fontSize-7 ms-fontWeight-regular">@item.description</p>
                         <p class="ms-fontSize-7 ms-fontWeight-regular">@item.location</p>

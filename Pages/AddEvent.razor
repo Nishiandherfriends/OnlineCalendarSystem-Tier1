@@ -31,6 +31,6 @@
 
         evt = new Event(1, title, description, location, startDate, endDate);
 
-        string message = await OnlineCalendarService.createEvent(UserService.GetUser().ID, evt);
+        string message = await OnlineCalendarService.createEvent(UserService.GetUser().id, evt);
     }
 }

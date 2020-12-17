@@ -37,5 +37,10 @@ namespace OnlineCalendarSystem_Tier1.Models
             this.minute = minute;
             this.second = second;
         }
+
+        public string HourToString()
+        {
+            return hour+":"+minute+":"+second;
+        }
     }
 }
