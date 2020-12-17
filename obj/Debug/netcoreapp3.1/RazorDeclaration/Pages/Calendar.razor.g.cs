@@ -111,7 +111,7 @@ using OnlineCalendarSystem_Tier1.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 205 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Calendar.razor"
+#line 204 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Calendar.razor"
        
     [Parameter]
     public RenderFragment<Date> DayTemplate { get; set; }

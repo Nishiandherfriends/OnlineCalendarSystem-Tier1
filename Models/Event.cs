@@ -21,12 +21,6 @@ namespace OnlineCalendarSystem_Tier1.Models
         public Date startDate { get; set; }
         [NotNull] 
         public Date endDate { get; set; }
-        //public string Color {get; private set;}
-
-        /*public Event()
-        {
-            Color = RandomColor.GetColor();
-        }*/
 
         public Event(int id, string title, string description, string location, Date startDate, Date endDate)
         {
