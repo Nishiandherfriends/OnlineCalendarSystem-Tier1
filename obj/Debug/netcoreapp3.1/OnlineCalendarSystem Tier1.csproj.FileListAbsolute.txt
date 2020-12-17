@@ -84,7 +84,6 @@ C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LoginLayout.razor.g.cs
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.dll
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\obj\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.pdb
-C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\users.json
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.deps.json
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.runtimeconfig.json
 C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\bin\Debug\netcoreapp3.1\OnlineCalendarSystem Tier1.runtimeconfig.dev.json
