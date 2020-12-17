@@ -76,22 +76,29 @@ using OnlineCalendarSystem_Tier1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
-using OnlineCalendarSystem_Tier1.Models;
+#line 12 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
+using Radzen.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
+#line 1 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Calendar.razor"
 using OnlineCalendarSystem_Tier1.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
-using Radzen.Blazor;
+#line 2 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Calendar.razor"
+using OnlineCalendarSystem_Tier1.Login;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Calendar.razor"
+using OnlineCalendarSystem_Tier1.Models;
 
 #line default
 #line hidden
@@ -104,7 +111,7 @@ using Radzen.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 182 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Calendar.razor"
+#line 205 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Calendar.razor"
        
     [Parameter]
     public RenderFragment<Date> DayTemplate { get; set; }
@@ -112,7 +119,7 @@ using Radzen.Blazor;
     private int year = 2020;
     private int month = 5;
     private int rows = 0;
-    
+
     public void SelectYear(ChangeEventArgs eventArgs)
     {
         year = Convert.ToInt32(eventArgs.Value.ToString());
@@ -128,11 +135,11 @@ using Radzen.Blazor;
     public void UpdateCalendar()
     {
         dates = new List<Date>();
-        
+
         var firstDay = new DateTime(year, month, 1);
         int weekNumber = (int)firstDay.DayOfWeek;
         int numberOfEmptyDays = 0;
-        if (weekNumber== 7)
+        if (weekNumber == 7)
         {
             numberOfEmptyDays = 0;
         }
@@ -143,22 +150,13 @@ using Radzen.Blazor;
         //Add empty days
         for (int i = 0; i < numberOfEmptyDays; i++)
         {
-            dates.Add(new Date
-            {
-                 day = 0,
-                isEmpty = true
-            });
+            dates.Add(new Date());
         }
         //Add month days
         int numberOfDaysInMonth = DateTime.DaysInMonth(year, month);
         for (int i = 0; i < numberOfDaysInMonth; i++)
         {
-            dates.Add(new Date
-            {
-                day = i+ 1,
-                isEmpty = false,
-                DateTime = new DateTime(year, month, i+1)
-            });
+            dates.Add(new Date());
         }
         //number of rows
         int count = dates.Count % 7;
@@ -167,9 +165,8 @@ using Radzen.Blazor;
             rows = dates.Count / 7;
         }
         else
-        {
+        { 
             rows = Convert.ToInt32(dates.Count / 7) + 1;
-            
         }
         Console.WriteLine($"Total Rows: {rows} | Number of Empty Days {numberOfEmptyDays} | Month Days {numberOfDaysInMonth}");
     }

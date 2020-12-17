@@ -42,5 +42,11 @@ namespace OnlineCalendarSystem_Tier1.Models
         {
             return hour+":"+minute+":"+second;
         }
+
+        public bool EqualsDateTime(DateTime dateTime) 
+        {
+            return dateTime.Year == year && dateTime.Month == month && dateTime.Day == day &&
+                dateTime.Hour == hour && dateTime.Minute == minute && dateTime.Second == second;
+        }
     }
 }

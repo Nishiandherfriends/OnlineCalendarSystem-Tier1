@@ -158,17 +158,17 @@
         <Calendar>
             <DayTemplate Context="day">
                 @{
-                    string currentDayClass = day.DateTime == DateTime.Now.Date ? "current-date" : "";
-                    string selectedDayClass = day == selectedDay ? "selected-day" : "";
+                    string currentDayClass = day.EqualsDateTime(DateTime.Now.Date) ? "current-date" : "";
+                    string selectedDayClass = day.EqualsDateTime(selectedDay) ? "selected-day" : "";
                 }
-                @if (!day.isEmpty)
+                @if (day != null)
                 {
                     <div class="day shadow @currentDayClass @selectedDayClass" @onclick="() =>selectedDay = day">
                         <h3 class="ms-fontSize-20 ms-fontWeight-regular">@day.day</h3>
-                        @if (day.Events != null && day.Events.Count != 0)
+                        @if (events != null && events.Count != 0)
                         {
-                            var eventpop = day.Events.FirstOrDefault();
-                            <div class="day-event @eventpop.Color">
+                            var eventpop = events.FirstOrDefault();
+                            <div class="day-event magenta">
                                 @if (eventpop.title.Length > 30)
                                 {
                                     @eventpop.title.Substring(0, 30);
@@ -187,11 +187,18 @@
     </div>
     <div class="col-sm-12 col-md-12 col-lg-3">
         <AddEvent EventDay="selectedDay" />
-        <EventList EventDay="selectedDay" />
-        <DeleteEvent EventDay="selectedDay" />
+        <EventList EventDay="DateTimeToDate(selectedDay)" />
+        <DeleteEvent EventDay="DateTimeToDate(selectedDay)" />
     </div>
 </div>
 
 @code{
+    private List<Event> events; // I'll take this out later
     private DateTime selectedDay = new DateTime();
+
+    public Date DateTimeToDate(DateTime dateTime)
+    {
+        return new Date(dateTime.Year, dateTime.Month, dateTime.Day,
+            dateTime.Hour, dateTime.Minute, dateTime.Second);
+    }
 }

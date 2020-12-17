@@ -76,20 +76,6 @@ using OnlineCalendarSystem_Tier1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
-using OnlineCalendarSystem_Tier1.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 11 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
-using OnlineCalendarSystem_Tier1.Data;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 12 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
 using Radzen.Blazor;
 
@@ -98,7 +84,21 @@ using Radzen.Blazor;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Login.razor"
+using OnlineCalendarSystem_Tier1.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Login.razor"
 using OnlineCalendarSystem_Tier1.Login;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Login.razor"
+using OnlineCalendarSystem_Tier1.Models;
 
 #line default
 #line hidden
@@ -113,10 +113,8 @@ using OnlineCalendarSystem_Tier1.Login;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Login.razor"
+#line 38 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Login.razor"
       
-    private User user;
-    OnlineCalendarService service = new OnlineCalendarService;
     private string username, password;
     private string errorMessage;
 
@@ -127,8 +125,8 @@ using OnlineCalendarSystem_Tier1.Login;
 
     public async void PerformLogin()
     {
-        User user = await service.login(username, password).Result;
-        if (user != null)
+        UserService.SetUser((User) await OnlineCalendarService.login(username, password));
+        if (UserService.GetUser() != null)
         {
             NavigationManager.NavigateTo("/");
         }
@@ -143,7 +141,6 @@ using OnlineCalendarSystem_Tier1.Login;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private OnlineCalendarService OnlineCalendarService { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUser UserService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
     }

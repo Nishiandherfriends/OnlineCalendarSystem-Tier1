@@ -76,22 +76,29 @@ using OnlineCalendarSystem_Tier1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
-using OnlineCalendarSystem_Tier1.Models;
+#line 12 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
+using Radzen.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
+#line 1 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\DeleteEvent.razor"
 using OnlineCalendarSystem_Tier1.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
-using Radzen.Blazor;
+#line 2 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\DeleteEvent.razor"
+using OnlineCalendarSystem_Tier1.Login;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\DeleteEvent.razor"
+using OnlineCalendarSystem_Tier1.Models;
 
 #line default
 #line hidden
@@ -104,22 +111,20 @@ using Radzen.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 13 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\DeleteEvent.razor"
+#line 15 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\DeleteEvent.razor"
        
     [Parameter]
     public Date EventDay { get; set; }
-    private Event _event = new Event();
+    private Event evt;
 
-    private void removeEvent()
+    private async void removeEvent()
     {
-       OnlineCalendarService.deleteEvent(_event.id);
+        string message = (string) await OnlineCalendarService.deleteEvent(evt.id);
     }
-
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private OnlineCalendarService OnlineCalendarService { get; set; }
     }
 }
 #pragma warning restore 1591

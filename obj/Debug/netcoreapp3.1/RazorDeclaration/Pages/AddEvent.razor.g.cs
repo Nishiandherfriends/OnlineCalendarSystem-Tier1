@@ -76,22 +76,29 @@ using OnlineCalendarSystem_Tier1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
-using OnlineCalendarSystem_Tier1.Models;
+#line 12 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
+using Radzen.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
+#line 1 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\AddEvent.razor"
 using OnlineCalendarSystem_Tier1.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
-using Radzen.Blazor;
+#line 2 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\AddEvent.razor"
+using OnlineCalendarSystem_Tier1.Login;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\AddEvent.razor"
+using OnlineCalendarSystem_Tier1.Models;
 
 #line default
 #line hidden
@@ -104,49 +111,25 @@ using Radzen.Blazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 19 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\AddEvent.razor"
+#line 22 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\AddEvent.razor"
        
-    [Parameter]
-    public Date EventDay { get; set; }
-    private static Event _event = new Event();
+    private Event evt;
+    private string title, description, location;
+    private DateTime sDate, eDate;
 
-    private Event calendarEvent = new Event
+    private async void createEvent()
     {
-        title = _event.title,
-        description = _event.description,
-        location = _event.location,
-        startDate = _event.startDate,
-        endDate = _event.endDate
-    };
-    private void addEventToSelectedDay()
-    {
-        _event.startDate = new DateTime(EventDay.DateTime.Year, EventDay.DateTime.Date.Month, EventDay.DateTime.Day, _event.startDate.Hour, _event.startDate.Minute, 0);
-        _event.endDate = new DateTime(EventDay.DateTime.Year, EventDay.DateTime.Date.Month, EventDay.DateTime.Day, _event.endDate.Hour, _event.endDate.Minute, 0);
-        if (EventDay.Events == null)
-        {
-            EventDay.Events = new List<Event>();
-        }
-        var calendarEvent = new Event
-        {
-            title = _event.title,
-            description = _event.description,
-            location =_event.location,
-            startDate = _event.startDate,
-            endDate = _event.endDate
-        };
-        EventDay.Events.Add(calendarEvent);
-        
-        Console.WriteLine($"Total Events in Day {EventDay.Events.Count} | {_event.description} | {_event.startDate} | {_event.endDate}");
-        
-        OnlineCalendarService.createEvent(1,calendarEvent);
+        Date startDate = new Date(sDate.Year, sDate.Month, sDate.Day, sDate.Hour, sDate.Minute, sDate.Second);
+        Date endDate = new Date(eDate.Year, eDate.Month, eDate.Day, eDate.Hour, eDate.Minute, eDate.Second);
+
+        evt = new Event(1, title, description, location, startDate, endDate);
+
+        string message = await OnlineCalendarService.createEvent(UserService.GetUser().id, evt);
     }
-    public static event Action OnEventAdded = () =>{ };
-    
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private OnlineCalendarService OnlineCalendarService { get; set; }
     }
 }
 #pragma warning restore 1591

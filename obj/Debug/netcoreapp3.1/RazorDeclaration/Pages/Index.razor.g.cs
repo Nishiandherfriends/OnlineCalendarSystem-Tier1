@@ -84,14 +84,21 @@ using Radzen.Blazor;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Index.razor"
-using OnlineCalendarSystem_Tier1.Models;
+using OnlineCalendarSystem_Tier1.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Index.razor"
-using OnlineCalendarSystem_Tier1.Data;
+using OnlineCalendarSystem_Tier1.Login;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Index.razor"
+using OnlineCalendarSystem_Tier1.Models;
 
 #line default
 #line hidden
@@ -105,14 +112,9 @@ using OnlineCalendarSystem_Tier1.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 173 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Index.razor"
+#line 195 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\Index.razor"
       
-
-    private Date selectedDay = new Date
-    {
-        DateTime = DateTime.Now
-    };
-
+    private DateTime selectedDay = new DateTime();
 
 #line default
 #line hidden

@@ -76,20 +76,6 @@ using OnlineCalendarSystem_Tier1.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
-using OnlineCalendarSystem_Tier1.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 11 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
-using OnlineCalendarSystem_Tier1.Data;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 12 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\_Imports.razor"
 using Radzen.Blazor;
 
@@ -98,7 +84,21 @@ using Radzen.Blazor;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\RegisterUser.razor"
+using OnlineCalendarSystem_Tier1.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\RegisterUser.razor"
 using OnlineCalendarSystem_Tier1.Login;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\RegisterUser.razor"
+using OnlineCalendarSystem_Tier1.Models;
 
 #line default
 #line hidden
@@ -113,12 +113,13 @@ using OnlineCalendarSystem_Tier1.Login;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\RegisterUser.razor"
+#line 34 "C:\Users\joaob\source\repos\OnlineCalendarSystem Tier1\OnlineCalendarSystem Tier1\Pages\RegisterUser.razor"
        
     private string username, password, message;
+
     public async void Register()
     {
-        message = await OnlineCalendarService.createUser(username, password).Result;
+        message = (string) await OnlineCalendarService.createUser(username, password);
         if (message.Equals("User created!"))
         {
             GoToLogin();
@@ -134,7 +135,6 @@ using OnlineCalendarSystem_Tier1.Login;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IUser userService { get; set; }
     }
 }
 #pragma warning restore 1591
