@@ -1,15 +1,17 @@
-﻿ @inject OnlineCalendarService OnlineCalendarService
+﻿@using OnlineCalendarSystem_Tier1.Data
+@using OnlineCalendarSystem_Tier1.Login
+@using OnlineCalendarSystem_Tier1.Models
 
- <div class="ms-depth-10 card">
-     <EditForm model="_event" OnValidSubmit="removeEvent">
-         <div class="calendar-toolbar">
-             <button class="toolbar-button" type="submit"><i class="ms-Icon ms-Icon--AddEvent"></i> RemoveEvent</button>
-         </div>
-         <div class="card-div">
-             <input type="text" @bind-value="_event.id" class="fl-input" placeholder="Event">
-         </div>
-     </EditForm>
- </div>
+<div class="ms-depth-10 card">
+    <EditForm model="_event" OnValidSubmit="removeEvent">
+        <div class="calendar-toolbar">
+            <button class="toolbar-button" type="submit"><i class="ms-Icon ms-Icon--AddEvent"></i> RemoveEvent</button>
+        </div>
+        <div class="card-div">
+            <input type="text" @bind-value="evt.id" class="fl-input" placeholder="Event">
+        </div>
+    </EditForm>
+</div>
 @code {
     [Parameter]
     public Date EventDay { get; set; }
@@ -17,7 +19,6 @@
 
     private async void removeEvent()
     {
-       await OnlineCalendarService.deleteEvent(evt.id);
+        await OnlineCalendarService.deleteEvent(evt.id);
     }
-
 }

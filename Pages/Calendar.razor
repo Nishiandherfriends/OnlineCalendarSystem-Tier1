@@ -1,82 +1,100 @@
-﻿<style>
-    header{
+﻿@using OnlineCalendarSystem_Tier1.Data
+@using OnlineCalendarSystem_Tier1.Login
+@using OnlineCalendarSystem_Tier1.Models
+
+<style>
+    header {
         padding: 25px;
     }
-    .shadow{
+
+    .shadow {
         transition: 0.3s
     }
-    .shadow:hover{
-        -webkit-box-shadow: 0px 4px 15px -6px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 4px 15px -6px rgba(0,0,0,0.75);
-        box-shadow: 0px 4px 15px -6px rgba(0,0,0,0.75);;
-    }
-    .calendar{
+
+        .shadow:hover {
+            -webkit-box-shadow: 0px 4px 15px -6px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 4px 15px -6px rgba(0,0,0,0.75);
+            box-shadow: 0px 4px 15px -6px rgba(0,0,0,0.75);
+            ;
+        }
+
+    .calendar {
         padding: 10px;
     }
-    .calendar-table{
+
+    .calendar-table {
         margin: 10px;
         width: 100%;
         background-color: #f3f2f1;
         text-align: center;
     }
-    .calendar-table thead{
-        background-color: white;
-    }
-    .calendar-table td{
-        padding: 4px;
-    }
-    .calendar-table .day{
-        width: 125px;
-        height: 125px;
-        min-width: 125px;
-        margin:5px;
-        border-radius: 5px;
-        background-color: white;
-        padding: 5px;
-        cursor: pointer;
-    }
-    .current-day{
-        border: 2px solid  #1b6ec2;
+
+        .calendar-table thead {
+            background-color: white;
+        }
+
+        .calendar-table td {
+            padding: 4px;
+        }
+
+        .calendar-table .day {
+            width: 125px;
+            height: 125px;
+            min-width: 125px;
+            margin: 5px;
+            border-radius: 5px;
+            background-color: white;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+    .current-day {
+        border: 2px solid #1b6ec2;
         color: #1b6ec2;
     }
-    .selected-day{
+
+    .selected-day {
         border: 2px solid #002752;
-        color:#002752;
+        color: #002752;
         background-color: #abdde5 !important;
     }
-     .day .day-event{
+
+    .day .day-event {
         font-size: 10px;
         padding: 5px;
     }
+
     .red-orange {
         background: #da3b01;
         color: white;
     }
-    
+
     .magenta {
         background: #881798;
         color: white;
     }
-    
+
     .pink-red {
         background-color: #750b1c;
         color: white;
     }
-    
+
     .yellow {
         background: #fce100;
         color: black;
     }
-    
+
     .yellow-green {
         background: #8cbd18;
         color: black;
     }
-    .calendar-toolbar{
+
+    .calendar-toolbar {
         background-color: #1b6ec2;
         color: white;
     }
-    .toolbar-button{
+
+    .toolbar-button {
         background: #1b6ec2;
         margin: 0px;
         padding: 5px 10px;
@@ -85,70 +103,75 @@
         outline: none;
         font-size: 25px;
         font-weight: 100;
-        color:white;
-        border:none;
-    }
-    .toolbar-button:hover{
-        background: #002752;
-    }
-    .toolbar-button:focus{
+        color: white;
         border: none;
-        outline:none;
     }
-    .fl-input{
+
+        .toolbar-button:hover {
+            background: #002752;
+        }
+
+        .toolbar-button:focus {
+            border: none;
+            outline: none;
+        }
+
+    .fl-input {
         display: block;
-        width:100%;
+        width: 100%;
         padding: 3px 7px;
         margin: 10px 0px;
         border: 1px solid #3b3a39;
     }
-    .input:focus{
-        outline:none;
+
+    .input:focus {
+        outline: none;
         border: 2px dashed #1b6ec2;
     }
-    .card-div{
+
+    .card-div {
         padding: 10px;
     }
+
     .event {
         border-radius: 5px;
         margin: 10px 5px;
         padding: 5px;
     }
-    .card{
-        margin:10px;
+
+    .card {
+        margin: 10px;
     }
-
-
 </style>
 <div class="calendar">
-            <div class="row">
-                <div class="col-sm-12  col-lg-2">
-                    <select class="fl-input" @onchange="SelectYear">
-                        @for (int i = 2019; i < 2025; i++)
-                        {
-                            <option>@i</option>
-                        }
-                    </select>
-                </div>
-                <div class="col-sm-12  col-lg-2">
-                    <select class="fl-input" @onchange="SelectMonth">
-                        <option value="1">January</option>
-                        <option value="2">February</option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
-                    </select>
-                </div>
-            </div>
-        <table class="calendar-table">
-            <thead>
+    <div class="row">
+        <div class="col-sm-12  col-lg-2">
+            <select class="fl-input" @onchange="SelectYear">
+                @for (int i = 2019; i < 2025; i++)
+                {
+                    <option>@i</option>
+                }
+            </select>
+        </div>
+        <div class="col-sm-12  col-lg-2">
+            <select class="fl-input" @onchange="SelectMonth">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+        </div>
+    </div>
+    <table class="calendar-table">
+        <thead>
             <tr>
                 <td>Sun</td>
                 <td>Mon</td>
@@ -158,12 +181,12 @@
                 <td>Fri</td>
                 <td>Sat</td>
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             @for (int i = 0; i < rows; i++)
             {
                 <tr>
-                    @foreach (var item in dates.Skip(i *7).Take(7) )
+                    @foreach (var item in dates.Skip(i * 7).Take(7))
                     {
                         <td> @DayTemplate(item)</td>
                     }
@@ -174,11 +197,11 @@
                     @*Days(day)*@
                 </td>
             </tr>
-            </tbody>
-        </table>
-        </div>
+        </tbody>
+    </table>
+</div>
 
-  
+
 @code {
     [Parameter]
     public RenderFragment<Date> DayTemplate { get; set; }
@@ -186,7 +209,7 @@
     private int year = 2020;
     private int month = 5;
     private int rows = 0;
-    
+
     public void SelectYear(ChangeEventArgs eventArgs)
     {
         year = Convert.ToInt32(eventArgs.Value.ToString());
@@ -202,11 +225,11 @@
     public void UpdateCalendar()
     {
         dates = new List<Date>();
-        
+
         var firstDay = new DateTime(year, month, 1);
         int weekNumber = (int)firstDay.DayOfWeek;
         int numberOfEmptyDays = 0;
-        if (weekNumber== 7)
+        if (weekNumber == 7)
         {
             numberOfEmptyDays = 0;
         }
@@ -219,7 +242,7 @@
         {
             dates.Add(new Date
             {
-                 day = 0,
+                day = 0,
                 isEmpty = true
             });
         }
@@ -229,9 +252,9 @@
         {
             dates.Add(new Date
             {
-                day = i+ 1,
+                day = i + 1,
                 isEmpty = false,
-                DateTime = new DateTime(year, month, i+1)
+                DateTime = new DateTime(year, month, i + 1)
             });
         }
         //number of rows
@@ -243,7 +266,7 @@
         else
         {
             rows = Convert.ToInt32(dates.Count / 7) + 1;
-            
+
         }
         Console.WriteLine($"Total Rows: {rows} | Number of Empty Days {numberOfEmptyDays} | Month Days {numberOfDaysInMonth}");
     }

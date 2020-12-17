@@ -1,6 +1,8 @@
 ﻿@page "/register"
 @layout AuthLayout
+@using OnlineCalendarSystem_Tier1.Data
 @using OnlineCalendarSystem_Tier1.Login
+@using OnlineCalendarSystem_Tier1.Models
 @inject NavigationManager NavigationManager
 
 <div class="row">
@@ -13,17 +15,17 @@
 
                 <label>Username</label>
                 <RadzenTextBox @bind-Value="username"></RadzenTextBox>
-                
+
                 <label>Password</label>
                 <RadzenPassword @bind-Value="password"></RadzenPassword>
-                
+
                 <hr />
                 <RadzenButton ButtonType="Radzen.ButtonType.Submit" Text="Register"
                               ButtonStyle="Radzen.ButtonStyle.Primary" class="btn-block mr-2"
-                              Disabled="false"/>
+                              Disabled="false" />
                 <RadzenButton ButtonType="Radzen.ButtonType.Button" Text="Login"
                               ButtonStyle="Radzen.ButtonStyle.Secondary" class="btn-block mr-2"
-                              Disabled="false" Click="GoToLogin"/>
+                              Disabled="false" Click="GoToLogin" />
             </RadzenCard>
         </EditForm>
     </div>

@@ -1,14 +1,18 @@
-﻿<div class="ms-depth-16 card">
+﻿@using OnlineCalendarSystem_Tier1.Data
+@using OnlineCalendarSystem_Tier1.Login
+@using OnlineCalendarSystem_Tier1.Models
+
+<div class="ms-depth-16 card">
     <div class="card-div">
         <h3 class="ms-fontSize-20 ms-fontWeight-regular">@EventDay.DateTime.ToString("D")</h3>
         @{
-            if (EventDay.Events ==null || EventDay.Events.Count == 0)
+            if (EventDay.Events == null || EventDay.Events.Count == 0)
             {
                 <h3 class="ms-fontSize-15 ms-fontWeight-regular">No events in this day </h3>
             }
             else
             {
-                @foreach (var item in EventDay.Events)
+                foreach (var item in EventDay.Events)
                 {
                     string color = item.Color;
                     <div class="event shadow @color">
@@ -17,7 +21,7 @@
                         <p class="ms-fontSize-7 ms-fontWeight-regular">@item.description</p>
                         <p class="ms-fontSize-7 ms-fontWeight-regular">@item.location</p>
                     </div>
-                } 
+                }
             }
         }
     </div>
@@ -25,15 +29,12 @@
 @code {
     [Parameter]
     public Date EventDay { get; set; }
-    
-    private Event _event = new Event();
+    private List<Event> events;
 
     protected override void OnInitialized()
-        {
-           AddEvent.OnEventAdded += ()=>{
-               StateHasChanged();
-           };
-        }
+    {
+        events = await OnlineCalendarService.getEvents(UserService.GetUser().id);
+        //AddEvent.OnEventAdded += () => {StateHasChanged();};
+    }
 }
 
-      

@@ -1,37 +1,36 @@
-﻿@inject OnlineCalendarService OnlineCalendarService
+﻿@using OnlineCalendarSystem_Tier1.Data
+@using OnlineCalendarSystem_Tier1.Login
+@using OnlineCalendarSystem_Tier1.Models
 
 
- <div class="ms-depth-18 card">
-     <EditForm model="_event" OnValidSubmit="createEvent">
-     <div class="calendar-toolbar">
-         <button class="toolbar-button" type="submit"><i class="ms-Icon ms-Icon--AddEvent"></i> Add Event</button>
-     </div>
-     
-     <div class="card-div">
-         <h3 class="ms-fontsize-25 ms-fontweight-regular">@EventDay.DateTime.ToString("D")</h3>
-         <input type="text" @bind-value="evt.title" class="fl-input" placeholder="Event">
-         <input type="text" @bind-value="evt.description" class="fl-input" placeholder="Description">
-         <input type="text" @bind-value="evt.location" class="fl-input" placeholder="Location">
-         <input type="time" @bind-value="sDate" class="fl-input" placeholder="">
-         <input type="time" @bind-value="eDate" class="fl-input" placeholder="">
-     </div>
-      </EditForm>
- </div>
+<div class="ms-depth-18 card">
+    <EditForm model="_event" OnValidSubmit="createEvent">
+        <div class="calendar-toolbar">
+            <button class="toolbar-button" type="submit"><i class="ms-Icon ms-Icon--AddEvent"></i> Add Event</button>
+        </div>
+
+        <div class="card-div">
+            <h3 class="ms-fontsize-25 ms-fontweight-regular">@EventDay.DateTime.ToString("D")</h3>
+            <input type="text" @bind-value="evt.title" class="fl-input" placeholder="Event">
+            <input type="text" @bind-value="evt.description" class="fl-input" placeholder="Description">
+            <input type="text" @bind-value="evt.location" class="fl-input" placeholder="Location">
+            <input type="time" @bind-value="sDate" class="fl-input" placeholder="">
+            <input type="time" @bind-value="eDate" class="fl-input" placeholder="">
+        </div>
+    </EditForm>
+</div>
 @code {
     private Event evt;
     private string title, description, location;
     private DateTime sDate, eDate;
-    [Parameter]
-    public Date eventDay { get; set; }
-
 
     private async void createEvent()
     {
-        Date startDate = new Date(eventDay.year, eventDay.month, eventDay.day, sDate.Hour, sDate.Minute, sDate.Second);
-        Date endDate = new Date(eventDay.year, eventDay.month, eventDay.day, eDate.Hour, eDate.Minute, eDate.Second);
+        Date startDate = new Date(sDate.Year, sDate.Month, sDate.Day, sDate.Hour, sDate.Minute, sDate.Second);
+        Date endDate = new Date(eDate.Year, eDate.Month, eDate.Day, eDate.Hour, eDate.Minute, eDate.Second);
 
         evt = new Event(1, title, description, location, startDate, endDate);
 
-        await OnlineCalendarService.createEvent(UserService.GetUser().ID, evt);
+        string message = await OnlineCalendarService.createEvent(UserService.GetUser().ID, evt);
     }
 }
