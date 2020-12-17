@@ -18,17 +18,17 @@ namespace OnlineCalendarSystem_Tier1.Models
         public string description { get; set; }
         public string location { get; set; }
         [NotNull]
-        public DateTime startDate { get; set; }
-    
-        [NotNull] public DateTime endDate { get; set; }
-        public string Color {get; private set;}
+        public Date startDate { get; set; }
+        [NotNull] 
+        public Date endDate { get; set; }
+        //public string Color {get; private set;}
 
-        public Event()
+        /*public Event()
         {
             Color = RandomColor.GetColor();
-        }
+        }*/
 
-        public Event(int id, string title, string description, string location, DateTime startDate, DateTime endDate)
+        public Event(int id, string title, string description, string location, Date startDate, Date endDate)
         {
             this.id = id;
             this.title = title;

@@ -7,40 +7,38 @@
 <div class="row">
     <div class="col-12">
         <h2>Create a new account</h2>
-        <EditForm Model="user" OnValidSubmit="Register">
+        <EditForm OnValidSubmit="Register">
             <RadzenCard>
                 <DataAnnotationsValidator />
                 <ValidationSummary />
 
                 <label>Username</label>
-                <RadzenTextBox @bind-Value="user.username"></RadzenTextBox>
+                <RadzenTextBox @bind-Value="username"></RadzenTextBox>
                 
                 <label>Password</label>
-                <RadzenPassword @bind-Value="user.password"></RadzenPassword>
+                <RadzenPassword @bind-Value="password"></RadzenPassword>
                 
                 <hr />
                 <RadzenButton ButtonType="Radzen.ButtonType.Submit" Text="Register"
                               ButtonStyle="Radzen.ButtonStyle.Primary" class="btn-block mr-2"
-                              Disabled="flag"/>
+                              Disabled="false"/>
                 <RadzenButton ButtonType="Radzen.ButtonType.Button" Text="Login"
                               ButtonStyle="Radzen.ButtonStyle.Secondary" class="btn-block mr-2"
-                              Disabled="flag" Click="GoToLogin"/>
+                              Disabled="false" Click="GoToLogin"/>
             </RadzenCard>
         </EditForm>
     </div>
 </div>
 
 @code {
-    User user =new User();
-    bool flag= false;
-     
-    public bool isSuccess { get; set; }
-    public async Task Register()
+    private string username, password, message;
+    public async void Register()
     {
-        flag = true;
-        userService.AddUser(user.username, user.password);
-        flag = false;
-       await OnlineCalendarService.createUser(user.username, user.password);
+        message = await OnlineCalendarService.createUser(username, password).Result;
+        if (message.Equals("User created!"))
+        {
+            GoToLogin();
+        }
     }
 
     public void GoToLogin()

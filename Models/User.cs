@@ -20,13 +20,6 @@ namespace OnlineCalendarSystem_Tier1.Models
         public string password { get; set; }
         [NotNull, Range(1,3)]
         public string securityLevel { get; set; }
-        
-        public User(){}
-        public User(string username, string password)
-        {
-            this.username = username;
-            this.password = password;
-        }
 
         public User(int id, string username, string password, string securityLevel)
         {

@@ -36,9 +36,9 @@ namespace OnlineCalendarSystem_Tier1
             services.AddScoped<IUser, UserService>();
             services.AddAuthorization(options =>
             {
-               options.AddPolicy("MustBeAdmin", a => a.RequireAuthenticatedUser().RequireClaim("securityLevel", "2"));
-                options.AddPolicy("MustBeUser", a => a.RequireAuthenticatedUser().RequireClaim("securityLevel", "1","2"));
-           });
+                options.AddPolicy("MustBeAdmin", a => a.RequireAuthenticatedUser().RequireClaim("securityLevel", "2"));
+                options.AddPolicy("MustBeUser", a => a.RequireAuthenticatedUser().RequireClaim("securityLevel", "1", "2"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
